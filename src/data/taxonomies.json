@@ -1,0 +1,28 @@
+{
+    "meta":
+    {
+        "taxonomies": [
+            "tags", 
+            "authors",
+            "sources"
+        ]
+    },
+
+    "data":
+    [
+        {
+            "taxonomy": "tags",
+            "items": ["Envirnoment", "Windows", "Configuration"]
+        },
+        {
+            "taxonomy": "authors",
+            "items": ["GREW", "GEMS"]
+        },
+        {
+            "taxonomy": "sources",
+            "items": ["Mike Besso", "Alan Arico", "John Wall"]
+        }
+
+
+    ]
+}

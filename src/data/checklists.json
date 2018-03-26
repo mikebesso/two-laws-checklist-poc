@@ -1,0 +1,126 @@
+{
+    "meta":
+    {
+        
+    },
+    "data":
+    [
+        {
+            "id": null,
+            "key": "1",
+            "title": "Set up Windows",
+            "tags": ["Envirnoment", "Windows", "Configuration"],
+            "steps":
+            [
+                {
+                    "id": null,
+                    "key": "2",
+                    "title": "Change default date format to yyyy-mm-dd",
+                    "notes": "Our tools prefer (and sometimes requires) dates to be formatted as yyyy-mm-dd"
+                }
+
+            ]
+
+            
+
+        },
+        {
+            "id": null,
+            "key": "3",
+            "title": "Process PTO",
+            "description" : "Process weekly PTO files received from GEMS group via email",
+            "frequency": "Weekly",
+            "trigger" : "Emails received Thursday evening",
+            "tags": ["PTO", "External", "GEMS"],
+            "steps": [
+                {
+                    "id": null,
+                    "title": "Process Year-to-Date PTO",
+                    "steps": [
+                        {
+                            "id": null,
+                            "key": "4",
+                            "title": "Get Attachment From Email"
+                        },
+                        {
+                            "id": null,
+                            "title": "Save the file to external feed folder renamed as: #####"
+                        },
+                        {
+                            "id": null,
+                            "title": "Clean File",
+                            "key": "5",
+                            "steps": [
+                                {
+                                    "id": null,
+                                    "title": "Remove rows above the table"
+
+                                },
+                                {
+                                    "id": null,
+                                    "title": "Remove the table's totals row"
+                                    
+                                },
+                                {
+                                    "id": null,
+                                    "title": "Reformat columns",
+                                    "steps":
+                                    [
+                                        {
+                                            "id": null,
+                                            "title": "Reformat [PTO Balance] column to 'general'",
+                                            "note": "The [PTO Balance] column can be negative, but it is formatted so that negative sign is after, not before the number. Our tools requires negative signs to be before the number. "
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": null,
+                                    "title": "Validate format of other numeric columns",
+                                    "note":  "Other columns might also be negative.  Make sure all are formated so that the negative sign is before the number"
+                                }
+                            ]
+                        }
+                    ]
+
+                },
+                {
+                    "id": null,
+                    "title": "Process PTO Taken",
+                    "steps": [
+                        {
+                            "id": null,
+                            "title": "stuff to do"
+                        },
+                        {
+                            "id": null,
+                            "title": "Save the file to external feed folder renamed as: #####"
+                        },
+                        {
+                            "id": null,
+                            "title": "Clean File",
+                            "steps": [
+                                 {
+                                    "id": null,
+                                    "title": "Remove the table's totals row"
+                                    
+                                },
+                                {
+                                    "id": null,
+                                    "title": "Reformat columns",
+                                    "steps":
+                                    [
+                                        {
+                                            "id": null,
+                                            "title": "Reformat date columns to 'short date'",
+                                            "note": "The [End Date] column is formatted as an integer while the [Start Date] is formatted 'mm-dd-yyy'.  Our tools cannot handle dates as integers and prefers 'yyyy-mm-dd'."
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
