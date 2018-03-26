@@ -9,7 +9,8 @@ import { Route, Switch } from 'react-router-dom';
 
 //import Checklists from '../components/Checklists';
 
-import pages from "../pages";
+import Page from "./pages";
+import Nav from "./Navigation";
 import actions from "../actions";
 
 
@@ -31,44 +32,44 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <section className="holygrail">
-          <header className="bg-inverse text-white text-center py-4"> 
-            <div> here I am </div>
-            <h3 className = "h3 bg-primary" height="100px">  
-              Header Here 
-            </h3>
-          </header>
-          <section className="holygrail-body no-gutters">
-            <nav className="holygrail-nav col-lg-2 col-xxl-1 bg-inverse">
 
-              <section className="text-center bg-danger">
-                  <h2>Nav</h2>
-                  <p className="lead">Here is where you put navigation or filters</p>
-              </section>
-              
-            </nav>
+        <div className="container-fluid h-100">
+
+          <div className="row h-100">
+
+            <div className="col-md-2 fixed">
+              <Nav.Left />
+            </div>
 
 
-          <Switch>
-            <Route path="/checklist/:key" component={pages.PageChecklist} />
-            <Route path="/checklists" component={pages.PageChecklists} />
-            <Route path="/" component={pages.PageHome} />
-          </Switch>
+            <div className="col fluid d-flex flex-column">
+              <Nav.Top id="topNav" />
+
+              <div className="row flex-grow">
+                <Switch>
+                  <Route path="/checklist/:key" component={Page.Checklist} />
+                  <Route path="/checklists" component={Page.Checklists} />
+                  <Route path="/control-panel" component={Page.ControlPanel} />
+                  <Route path="/" component={Page.Home} />
+                </Switch>
+              </div>
+              <footer className="navbar navbar-toggleable-xl navbar-faded navbar-light bg-primary">
+                  Footer
+              </footer>
+
+            </div>
 
             <aside className="holygrail-aside col-lg-3 col-xxl-2 bg-inverse">
                         
-                <section className="text-center bg-danger">
+                <section className="text-center bg-secondary">
                     <h2>Aside</h2>
                     <p className="lead">Here is where you put useful information or ads</p>
                 </section>
             </aside>
 
-            </section>
-
-            <footer className="bg-danger text-inverse text-center py-4">
-                <h3>Footer</h3>
-            </footer>
-        </section>
+          
+          </div>
+        </div>
       </BrowserRouter>  
     );
     

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ChecklistList from '../components/ChecklistList';
+import ChecklistList from '../ChecklistList';
 
 
 

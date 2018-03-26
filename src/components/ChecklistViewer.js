@@ -25,10 +25,6 @@ class ChecklistViewer extends Component {
     renderSteps(steps){
         return(
             <div>
-                <h4>
-                    Steps
-                </h4>
-                
                 <ListGroup>
                     {
                         _.flatMap(steps, this.renderStep.bind(this))
@@ -46,12 +42,9 @@ class ChecklistViewer extends Component {
         return(
             <ListGroupItem key={d.key} action>
                 <Media>
-                    <Media left href="#" >
-                        <Media object src = {`${icon}`} alt="image" width="60px"/>
-                    </Media>
+                    <Media title> {d.title} </Media>
                     <Media body>
-                        <Media heading>{d.title}</Media>
-                        description goes here
+                        {d.description}
                     </Media>
                 </Media>
                 

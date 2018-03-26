@@ -1,26 +1,24 @@
 html {
-    height: 100vh;
+    height: 100%;
 }
-.holygrail {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+
+body {
+    min-height: 100vh;
 }
-.holygrail-body {
-    flex: 1 0 auto;
-    display: flex;
-    flex-direction: column;
-}
-@media screen and (min-width: 768px) { /* @include media-breakpoint-up(lg) */
-    .holygrail-body {
-        flex-direction: row;
+
+/* fixed and fluid only on sm and up */
+@media (min-width: 576px) {
+    .fixed {
+        flex: 0 0 200px;
+        min-height: 100vh;
     }
-    .holygrail-main {
-        flex: 1;
-    }      
-    .holygrail-nav, .holygrail-aside {
-        flex: 0 0 auto;
+    .col .fluid {
+       min-height: 100vh;
     }
+}
+
+.flex-grow {
+   flex:1;
 }
 
 /* Other styles */

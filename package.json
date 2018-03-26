@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.4",
+    "@fortawesome/fontawesome-free-brands": "^5.0.8",
     "@fortawesome/fontawesome-pro-light": "^5.0.8",
     "@fortawesome/fontawesome-pro-regular": "^5.0.8",
     "@fortawesome/fontawesome-pro-solid": "^5.0.8",
@@ -14,18 +15,21 @@
     "firebase": "^4.12.0",
     "jquery": "^3.3.1",
     "lodash": "^4.17.5",
+    "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.1",
+    "react-step": "^0.4.1",
     "reactstrap": "^5.0.0",
     "redux": "^3.7.2",
     "redux-axios": "0.0.2",
     "redux-devtools-extension": "^2.13.2",
     "redux-promise": "^0.5.3",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "remove": "^0.1.5"
   },
   "scripts": {
     "start": "react-scripts start",
