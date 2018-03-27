@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import fontawesome from '@fortawesome/fontawesome'
 import FA from '@fortawesome/react-fontawesome'
 
@@ -29,6 +29,11 @@ fontawesome.library.add(solid,  fasEdit, farEdit);
 fontawesome.library.add(regular,  fasEdit, farEdit);
 
 
+
+// consider separting out the library and icons to separate file
+// so that each project can set these up as needed        
+
+
 const icons = { 
     solid:
     {
@@ -46,29 +51,33 @@ const icons = {
             beer: farBeer
         }            
     }
+}
 
-};
 
-const iconSize = {
+const size = {
     x1: "1x",
     x2: "2x",
-    x3: "3x"
+    x3: "3x"       
+};
+
+
+class FontAwesome extends Component {
+ 
+    static get size() {return size;}
+
+    static get icons() {return icons;}
+    
+    render(){
+        return(
+            <FA 
+                icon={FontAwesome.icons.solid.beverages.coffee}
+                size={FontAwesome.size.x3}
+            />   
+        )     
+    }
+
 }
 
 
-
-
-const FontAwesome = (icon=icons.regular.beer, size=iconSize.x1) => {
-    console.log(size);
-    return(
-        <FA 
-            icon={farCoffee}
-            size={iconSize.x2}
-        />
-    );
-}
-        
-
-export {iconSize, icons};
 
 export default FontAwesome;

@@ -2,14 +2,12 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 
-import FontAwesome, {icons, iconSize} from '../FontAwesome'
-
+import FontAwesome from '../FontAwesome';
 
 class PageHome extends Component {
 
   render() {
 
-    console.log("size", iconSize, iconSize.x1)
     return (
         <main className = "holygrail-main col-lg-7 col-xxl-9">
 
@@ -27,9 +25,9 @@ class PageHome extends Component {
 
             <h1>Learning fontawesome </h1>
             <div>
-                <FontAwesome icon={icons.regular.beverages.beer} size={iconSize.x1} />
-                <FontAwesome icon={icons.regular.beverages.martini} size={iconSize.x2} />
-                <FontAwesome icon={icons.regular.beverages.coffee} size={iconSize.x3} />
+                <FontAwesome icon={FontAwesome.icons.regular.beverages.beer} size={FontAwesome.size} />
+                <FontAwesome icon={FontAwesome.icons.regular.beverages.martini} size={FontAwesome.size} />
+                <FontAwesome icon={FontAwesome.icons.regular.beverages.coffee} size={FontAwesome.size} />
             </div>
 
 
