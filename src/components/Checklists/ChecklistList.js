@@ -1,16 +1,16 @@
 import React from "react";
 import { connect } from "react-redux";
-import { isUndefined } from "util";
 import { bindActionCreators } from 'redux';
+import { isUndefined } from "util";
 
 import { Media, ListGroup, ListGroupItem } from "reactstrap";
 import { Link, withRouter } from 'react-router-dom';
 import _ from "lodash";
 
 
-import actions from "../actions/index";
+import actions from "../../actions/index";
 
-import icon from "../img/arrow-alt-circle-right.svg";
+import icon from "../../img/arrow-alt-circle-right.svg";
 
 class ChecklistList extends React.Component {
 

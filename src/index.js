@@ -16,30 +16,37 @@ import { createStore, applyMiddleware } from 'redux';
 import ReduxPromise from 'redux-promise';
 import thunk from 'redux-thunk';
 import externalInterfaceMiddleware from './middlewares/axios';
+import routerMiddleware from './middlewares/router-middleware';
 
 // Import our stuff
 import App from './components/app';
 import reducers from './reducers';
+import actions from './actions';
+
+
 
 
 // https://fontawesome.com/how-to-use/js-component-packages#
 
 
-console.log("here")
-
-
-
 const createStoreWithMiddleware = applyMiddleware(
     ReduxPromise, 
     thunk,
-    externalInterfaceMiddleware
+    externalInterfaceMiddleware,
+    routerMiddleware
   )(createStore);
   
 
+const store = createStoreWithMiddleware(reducers);
+
+console.log("action types", actions);
+actions.initializeFirebase()
+
+store.dispatch(actions.initializeFirebase());
 
 ReactDOM.render(
     (
-        <Provider store={createStoreWithMiddleware(reducers)}>
+        <Provider store={store}>
            <App />
         </Provider>
     ), 

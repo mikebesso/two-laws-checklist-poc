@@ -6,8 +6,8 @@ import { Media, ListGroup, ListGroupItem } from "reactstrap";
 
 import _ from "lodash";
 
-import icon from "../img/arrow-alt-circle-right.svg";
-import actions from "../actions";
+import icon from "../../img/arrow-alt-circle-right.svg";
+import actions from "../../actions";
 
 class ChecklistViewer extends Component {
 

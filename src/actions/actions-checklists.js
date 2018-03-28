@@ -1,10 +1,10 @@
 import data from "../data";
-import firebase from "../backends/firebase";
+
 import actionTypes from "./action-types";
+import firebase from "firebase";
 
 
-export function reinitializeChecklists() {
-
+function reinitializeChecklists() {
     return(
         (dispatch) => {
             dispatch(
@@ -13,22 +13,15 @@ export function reinitializeChecklists() {
                     payload: {}
                 }
             );
-
             data.reinitializeChecklists();
-
             dispatch(loadChecklists());
-
- 
         }
     )                
-            
-    
 }
 
    
-export function loadChecklists() {
-
-    return(
+function loadChecklists() {
+   return(
         (dispatch) => {
             dispatch(
                 {

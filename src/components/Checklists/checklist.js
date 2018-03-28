@@ -1,7 +1,7 @@
 import React from "react";
-import { connect } from "react-redux";
 import { isUndefined } from "util";
 import { bindActionCreators } from 'redux';
+import { connect } from "react-redux";
 
 import { Media, ListGroup, ListGroupItem } from 'reactstrap';
 

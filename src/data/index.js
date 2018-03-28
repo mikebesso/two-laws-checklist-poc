@@ -1,5 +1,5 @@
 
-import firebase from "../backends/firebase"
+import firebase from "firebase"
 import initialData from "./checklists.json";
 import _ from "lodash";
 

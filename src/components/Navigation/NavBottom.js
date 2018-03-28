@@ -2,10 +2,8 @@ import React from 'react';
 import { Link, withRouter } from "react-router-dom";
 import { bindActionCreators } from 'redux';
 import { connect } from "react-redux";
-import UserUI from "../UserUI";
 
 import {
-  Button,
   Collapse,
   Navbar,
   NavbarToggler,
@@ -18,11 +16,7 @@ import {
   DropdownMenu,
   DropdownItem } from 'reactstrap';
 
-
-
-
-
-class NavTop extends React.Component {
+class NavBottom extends React.Component {
   constructor(props) {
     super(props);
 
@@ -36,8 +30,6 @@ class NavTop extends React.Component {
       isOpen: !this.state.isOpen
     });
   }
-
-
   render() {
     return (
         <Navbar className="bg-primary text-white" dark expand="md">
@@ -45,12 +37,9 @@ class NavTop extends React.Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-
               <NavItem>
-                <UserUI.component.UserButton />
+                <NavLink href="https://github.com/mikebesso/two-laws-checklist-poc" target="_new">Github</NavLink>
               </NavItem>
-              
-              
             </Nav>
           </Collapse>
         </Navbar>
@@ -69,6 +58,6 @@ const mapStateToProps = (state) => (
 );
 
 
-export default connect(mapStateToProps)(withRouter(NavTop));
+export default connect(mapStateToProps)(withRouter(NavBottom));
 
 
