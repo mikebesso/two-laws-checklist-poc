@@ -2,13 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from "prop-types";
 import {Link} from "react-router-dom";
 
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav
-} from 'reactstrap';
+import * as BS from 'reactstrap';
 
 
 /*
@@ -50,15 +44,15 @@ class MenuBar extends Component {
 
   render() {
     return (
-        <Navbar className="bg-primary text-white" dark expand="md">
-          <NavbarBrand tag={Link} to={this.props.homePath}>{this.props.homeText}</NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
+        <BS.Navbar className="bg-primary text-white" dark expand="md">
+          <BS.NavbarBrand tag={Link} to={this.props.homePath}>{this.props.homeText}</BS.NavbarBrand>
+          <BS.NavbarToggler onClick={this.toggle} />
+          <BS.Collapse isOpen={this.state.isOpen} navbar>
+            <BS.Nav className="ml-auto" navbar>
                 {this.props.children}
-            </Nav>
-          </Collapse>
-        </Navbar>
+            </BS.Nav>
+          </BS.Collapse>
+        </BS.Navbar>
     );
   }
 }

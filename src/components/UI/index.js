@@ -1,7 +1,9 @@
-import MenuBar from "./MenuBar"
+import MenuBar from "./MenuBar";
+import Tabs from "./Tabs";
 
 
 
 export default {
-    MenuBar
+    MenuBar,
+    Tabs
 }

@@ -1,0 +1,107 @@
+.e-steppers {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 1px 1px rgba(0, 0, 0, 0.28); }
+  .e-steppers .e-steppers-list {
+    display: table;
+    width: 100%; }
+    .e-steppers .e-steppers-list li {
+      display: table-cell;
+      line-height: 72px;
+      cursor: pointer;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none; }
+      .e-steppers .e-steppers-list li a {
+        display: flex;
+        flex-direction: row;
+        color: #111;
+        font-size: 12px; }
+    .e-steppers .e-steppers-list .step-icon {
+      display: inline-block;
+      flex: flex-grow;
+      margin: 24px 8px;
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
+      text-align: center;
+      background-color: #444;
+      color: white;
+      border-radius: 50%;
+      font-size: 12px; }
+    .e-steppers .e-steppers-list .title {
+      flex: flex-grow;
+      color: #666;
+      margin-right: 8px;
+      font-size: 14px; }
+    .e-steppers .e-steppers-list .optional {
+      flex: flex-grow;
+      color: #444;
+      font-size: 12px;
+      line-height: 12px;
+      margin-top: -12px; }
+    .e-steppers .e-steppers-list .title.hasOptional {
+      line-height: 50px; }
+    .e-steppers .e-steppers-list .connector {
+      flex: 1;
+      align-self: center;
+      height: 1px;
+      background-color: #444;
+      line-height: 24px; }
+    .e-steppers .e-steppers-list li:first-child .step-icon {
+      margin: 24px 8px 24px 24px; }
+    .e-steppers .e-steppers-list li.active .step-icon {
+      background-color: blue; }
+    .e-steppers .e-steppers-list li.active .title {
+      color: #999; }
+    .e-steppers .e-steppers-list li.progress .step-icon {
+      background-color: blue; }
+      .e-steppers .e-steppers-list li.progress .step-icon .e-icon-action-done {
+        line-height: 23px; }
+    .e-steppers .e-steppers-list li.progress .title {
+      color: #700; }
+  .e-steppers.vertical .active .e-steppers-list .step-icon {
+    background-color: blue; }
+  .e-steppers.vertical .progress .e-steppers-list .step-icon {
+    background-color: blue; }
+  .e-steppers.vertical .e-steppers-container {
+    box-shadow: none; }
+    .e-steppers.vertical .e-steppers-container .e-stepper-content {
+      position: relative;
+      padding-left: 40px; }
+      .e-steppers.vertical .e-steppers-container .e-stepper-content .e-stepper-content.active {
+        min-height: inherit; }
+  .e-steppers.vertical .connector {
+    position: absolute;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    margin: 0 20px;
+    background-color: #444; }
+
+.e-steppers-container {
+  margin-top: -14px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 1px 1px rgba(0, 0, 0, 0.28); }
+  .e-steppers-container .e-stepper-content {
+    visibility: hidden;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    padding: 0;
+    box-sizing: border-box; }
+    .e-steppers-container .e-stepper-content.active {
+      visibility: visible;
+      min-height: 200px;
+      width: 100%;
+      height: 100%;
+      padding: 8px; }
+
+.vertical .e-steppers-container .e-stepper-content.active {
+  min-height: inherit; }
+
+body {
+  width: 100%;
+  padding: 3pt;
+  margin: 3pt;
+  background-color: #EEE; }

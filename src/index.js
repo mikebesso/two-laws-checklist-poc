@@ -1,7 +1,6 @@
 
 // Styles
 import styles from 'bootstrap/dist/css/bootstrap.css';
-import './css/styles.css';
 
 // Service workers for offline use
 import registerServiceWorker from './registerServiceWorker';
@@ -24,6 +23,7 @@ import App from './components/app';
 import reducers from './reducers';
 import actions from './actions';
 
+import './styles/css/index.css';
 
 
 
