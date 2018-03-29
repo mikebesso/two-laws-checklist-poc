@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+import UI from "../UI";
 
 import FontAwesome from '../FontAwesome';
 
 class PageHome extends Component {
 
   render() {
+
+    const input = '# This is a header\n\nAnd this is a paragraph';
 
     return (
         <main className = "holygrail-main col-lg-7 col-xxl-9">
@@ -30,6 +33,7 @@ class PageHome extends Component {
                 <FontAwesome icon={FontAwesome.icons.regular.beverages.coffee} size={FontAwesome.size} />
             </div>
 
+            <UI.Markdown source={input} />
 
         </main>
 
