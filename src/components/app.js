@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
 import { connect } from "react-redux";
 import { history } from "../middlewares/router-middleware";
 import ConnectedRouter from "./ConnectedRouter";
@@ -7,7 +6,7 @@ import ConnectedRouter from "./ConnectedRouter";
 
 
 
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 
 //import Checklists from '../components/Checklists';
@@ -72,7 +71,7 @@ class App extends Component {
                           
                   <section className="text-center bg-secondary">
                       <h2>Aside</h2>
-                      <p className="lead">Hello {this.props.isLoaded.user ? this.props.user.uid : "There"}</p>
+                      <p className="lead">the right side will show context sensitive tips and help</p>
                   </section>
               </aside>
 

@@ -4,6 +4,9 @@ import { Router } from "react-router";
 
 import actionTypes from "../../actions/action-types"
 
+/*
+    isSSR:  is Server Side Rendering
+*/
 
 class ConnectedRouter extends Component {
   static propTypes = {
@@ -18,6 +21,8 @@ class ConnectedRouter extends Component {
   };
 
   handleLocationChange = (location, action) => {
+
+    console.log("LOCATION_CHANGE", location, action)
     this.store.dispatch({
       type: actionTypes.LOCATION_CHANGE,
       payload: {
@@ -28,6 +33,7 @@ class ConnectedRouter extends Component {
   };
 
   componentWillMount() {
+      console.log("Mounting")
     const { store: propsStore, history, isSSR } = this.props;
     this.store = propsStore || this.context.store;
 
@@ -38,6 +44,7 @@ class ConnectedRouter extends Component {
   }
 
   componentWillUnmount() {
+    console.log("Unmounting")
     if (this.unsubscribeFromHistory) this.unsubscribeFromHistory();
   }
 

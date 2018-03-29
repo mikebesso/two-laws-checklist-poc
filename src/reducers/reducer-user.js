@@ -27,7 +27,6 @@ export default function(state = {}, action) {
             break;
 
         default:
-            newState = state;
             break;
     }
 

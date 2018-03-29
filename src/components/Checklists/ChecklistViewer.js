@@ -42,7 +42,7 @@ class ChecklistViewer extends Component {
         return(
             <ListGroupItem key={d.key} action>
                 <Media>
-                    <Media title> {d.title} </Media>
+                    <Media heading>{d.title}</Media>
                     <Media body>
                         {d.description}
                     </Media>

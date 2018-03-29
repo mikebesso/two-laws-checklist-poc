@@ -8,17 +8,10 @@ import actions from '../../../actions';
 import {
   ButtonDropdown,
   Button,
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem } from 'reactstrap';
+  DropdownItem 
+} from 'reactstrap';
 
 
 

@@ -1,29 +1,12 @@
 import React from 'react';
-import { Nav, NavItem, NavLink } from 'reactstrap';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from "react-router-dom";
 import { bindActionCreators } from 'redux';
 import { connect } from "react-redux";
 
 
-import SignOutButton from '../UserUI/SignOut';
-
-//import actions from "../../actions/index";
 import PageUser from "../pages/PageUser";
 
-const NavigationAuth = () =>
-  <Nav vertical>
-    <NavItem><NavLink tag={Link} to="/">Landing</NavLink></NavItem>
-    <NavItem><NavLink tag={Link} to="/">Home</NavLink></NavItem>
-    <NavItem><NavLink tag={Link} to={PageUser.routes.account}>Account</NavLink></NavItem>
-    <NavItem><SignOutButton /></NavItem>
-  </Nav>
-
-const NavigationNonAuth = () =>
-  <Nav vertical>
-    <NavItem><NavLink tag={Link} to="/">Landing</NavLink></NavItem>
-    <NavItem><NavLink tag={Link} to={PageUser.routes.signIn}>Sign In</NavLink></NavItem>
-  </Nav>
 
 
 class NavLeft extends React.Component {
@@ -39,14 +22,8 @@ class NavLeft extends React.Component {
 
       return (
         <div>
-            <h1> User Name </h1>
-            <p> { user } </p>
-        
+            the left side will provide context sensitive actions
 
-        { this.props.authUser
-            ? <NavigationAuth />
-            : <NavigationNonAuth />
-        }
       </div>
       );
     }

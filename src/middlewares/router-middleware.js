@@ -12,14 +12,23 @@ export const history = createHistory();
  * reducer or any middleware that comes after this one.
  */
 function createRouterMiddleware(history) {
-  return () => next => action => {
-    if (action.type !== actionTypes.CALL_HISTORY_METHOD) {
-      return next(action);
+  return(
+    () => {
+      return(
+        (next) => {
+          return(
+            (action) => {
+              if (action.type !== actionTypes.CALL_HISTORY_METHOD) {
+                return next(action);
+              }
+              const { payload: { method, args } } = action;
+              history[method](...args);
+            }
+          )
+        }  
+      )
     }
-
-    const { payload: { method, args } } = action;
-    history[method](...args);
-  };
+  )
 }
 
 

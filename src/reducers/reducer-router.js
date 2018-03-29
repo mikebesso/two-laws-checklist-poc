@@ -12,12 +12,30 @@ const initialState = {
  * if you have asynchronously-loaded routes, so reading from and relying on
  * this state is discouraged.
  */
-export default function routerReducer(state = initialState, { type, payload } = {}) {
-  if (type === actionTypes.LOCATION_CHANGE) {
-    const { location, action } = payload || {};
+export default function routerReducer(state = initialState, action) {
 
-    return { ...state, location, action };
-  }
+  console.log("routerReducer", action, state);
+  
+  let newState = state;
 
-  return state;
+  switch(action.type){
+    
+    case actionTypes.LOCATION_CHANGE:
+
+      if (action.payload) {
+        newState = { ...state, location: action.payload.location, action: action.payload.action };      
+      } else {
+        newState = initialState;
+      }
+      break;
+    
+      default: 
+      newState = state;
+
+    }
+  
+
+  console.log("reduced", newState);
+  return(newState);  
+
 }

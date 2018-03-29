@@ -4,17 +4,14 @@ import { bindActionCreators } from 'redux';
 import { connect } from "react-redux";
 
 import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem } from 'reactstrap';
+    Collapse,
+    Navbar,
+    NavbarToggler,
+    NavbarBrand,
+    Nav,
+    NavItem,
+    NavLink
+ } from 'reactstrap';
 
 class NavBottom extends React.Component {
   constructor(props) {

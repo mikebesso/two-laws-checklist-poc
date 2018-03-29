@@ -1,5 +1,3 @@
-import { Router } from "react-router-dom";
-
 import firebase from "firebase";
 import actionTypes from "./action-types";
 
