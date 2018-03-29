@@ -3,6 +3,8 @@ import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import UserUI from "../UserUI";
 
+import UI from "../UI";
+
 import {
   Collapse,
   Navbar,
@@ -18,7 +20,20 @@ import {
 
 
 
+  class NavTop extends React.Component {
 
+    render(){
+      return(
+        <UI.MenuBar>
+          <NavItem>
+            <UserUI.component.UserButton />
+          </NavItem>
+        </UI.MenuBar>
+      )
+    }
+  }
+
+/*
 
 class NavTop extends React.Component {
   constructor(props) {
@@ -70,3 +85,6 @@ const mapStateToProps = (state) => (
 export default connect(mapStateToProps)(withRouter(NavTop));
 
 
+*/
+
+export default NavTop;

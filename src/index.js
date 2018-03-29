@@ -11,6 +11,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
+import {logger} from 'redux-logger';
 
 // middlewares
 import ReduxPromise from 'redux-promise';
@@ -30,6 +31,7 @@ import actions from './actions';
 
 
 const createStoreWithMiddleware = applyMiddleware(
+    logger,  
     ReduxPromise, 
     thunk,
     externalInterfaceMiddleware,

@@ -8,26 +8,56 @@ import { auth } from '../../../firebase';
 import { connect } from "react-redux";
 import { bindActionCreators } from 'redux';
 
+import * as BS from "reactstrap";
 
 import actions from '../../../actions';
+import SignOutButton from '../SignOut';
 
 class SignInPage extends Component {
 
     render(){
       return(
-        <div>
 
-      <button
-        onClick={() => this.props.signInWithGoogle()}
-      >
-          Sign In With Google
-      </button>
 
-          <h1>SignIn</h1>
-          <SignInForm />
-          <PasswordForgetLink />
-          <SignUpLink />
-      </div>
+          (!this.props.firebase.user )
+            ?
+              (
+                <BS.Container className="mt-4" fluid>
+
+                  <BS.Row>
+                    <BS.Col className="text-center col-sm-4">
+                      <BS.Button
+                        onClick={() => this.props.signInWithGoogle()}
+                      >
+                        Sign In With Google
+                      </BS.Button>
+                  </BS.Col>
+                  <BS.Col className="text-center col-sm-4">
+                      Or
+                    </BS.Col>
+                    <BS.Col  className="text-center col-sm-4">
+                        <h1>SignIn</h1>
+                        <SignInForm />
+                        <PasswordForgetLink />
+                        <SignUpLink />
+                    </BS.Col>
+                  </BS.Row>
+              </BS.Container>
+            )
+          :
+            (
+              <BS.Container className="mt-4" fluid>
+                <BS.Row>
+                <BS.Col className="text-center col-sm-12">
+                  Please come back soon.
+                </BS.Col>
+                  <BS.Col className="text-center col-sm-12">
+                    <SignOutButton />
+                  </BS.Col>
+                </BS.Row>
+              </BS.Container>
+                
+            )
       )
     }
 }
