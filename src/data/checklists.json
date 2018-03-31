@@ -1,22 +1,31 @@
 {
-    "meta":
-    {
-        
-    },
     "data":
     [
         {
-            "id": null,
-            "key": "1",
             "title": "Set up Windows",
+            "description": "describe this",
             "tags": ["Envirnoment", "Windows", "Configuration"],
+            "triggers" : ["Setup"],
+            "notes": [
+                {
+                    "type": "Lessons Learned",
+                    "body": ""
+                }
+            ],
             "steps":
             [
                 {
-                    "id": null,
-                    "key": "2",
                     "title": "Change default date format to yyyy-mm-dd",
-                    "notes": "Our tools prefer (and sometimes requires) dates to be formatted as yyyy-mm-dd"
+                    "notes": [
+                        {
+                            "type": "Prerequisite",
+                            "title": "Data Formats",
+                            "body": "Our tools prefer (and sometimes requires) dates to be formatted as yyyy-mm-dd"
+                        }
+                    ]
+                },
+                {
+                    "title": "Map Z Drive"
                 }
 
             ]
@@ -25,58 +34,79 @@
 
         },
         {
-            "id": null,
-            "key": "3",
             "title": "Process PTO",
             "description" : "Process weekly PTO files received from GEMS group via email",
             "frequency": "Weekly",
-            "trigger" : "Emails received Thursday evening",
+            "triggers" : ["Email"],
             "tags": ["PTO", "External", "GEMS"],
+            "notes": [
+                {
+                    "type": "Lessons Learned",
+                    "title": "a title",
+                    "body": "stuff goes here"
+                },
+                {
+                    "type": "Continuous Improvement",
+                    "title": "a title",
+                    "body": "stuff goes here"
+                },
+                {
+                    "type": "Use Case",
+                    "title": "a title",
+                    "body": "stuff goes here"
+                }
+            ],
+            
             "steps": [
                 {
-                    "id": null,
                     "title": "Process Year-to-Date PTO",
                     "steps": [
                         {
-                            "id": null,
-                            "key": "4",
-                            "title": "Get Attachment From Email"
+                            "title": "Get Attachment From Email",
+                            "body": "We receive an Excel workbook as an attachment."
                         },
                         {
-                            "id": null,
-                            "title": "Save the file to external feed folder renamed as: #####"
+                            "title": "Save the file to external feed folder renamed as: #####",
+                            "instructions": "Select the attachment and save it."
                         },
                         {
-                            "id": null,
                             "title": "Clean File",
                             "key": "5",
                             "steps": [
                                 {
-                                    "id": null,
-                                    "title": "Remove rows above the table"
-
+                                    "title": "Remove rows above the table",
+                                    "instructions": "instructions go here"
                                 },
                                 {
-                                    "id": null,
-                                    "title": "Remove the table's totals row"
-                                    
+                                    "title": "Remove the table's totals row",
+                                    "instructions": "instructions go here"
                                 },
                                 {
-                                    "id": null,
                                     "title": "Reformat columns",
+                                    "instructions": "instructions go here",
                                     "steps":
                                     [
                                         {
-                                            "id": null,
                                             "title": "Reformat [PTO Balance] column to 'general'",
-                                            "note": "The [PTO Balance] column can be negative, but it is formatted so that negative sign is after, not before the number. Our tools requires negative signs to be before the number. "
+                                            "instructions": "Select the column and use the ribbon to change the format.",
+                                            "notes": [
+                                                {   "type": "Warning",
+                                                    "body": "The [PTO Balance] column can be negative, but it is formatted so that negative sign is after, not before the number. Our tools requires negative signs to be before the number. "
+                                                }
+                                            ]
                                         }
                                     ]
                                 },
                                 {
-                                    "id": null,
                                     "title": "Validate format of other numeric columns",
-                                    "note":  "Other columns might also be negative.  Make sure all are formated so that the negative sign is before the number"
+                                    "instructions": "Check other numeric columns.",
+                                    "notes": [
+                                        {
+                                            "type": "Warning",
+                                            "title": "Change Happens",
+                                            "body": "Other columns might also be negative.  Make sure all are formated so that the negative sign is before the number"
+                                        }    
+                                    ]
                                 }
                             ]
                         }
@@ -84,35 +114,39 @@
 
                 },
                 {
-                    "id": null,
                     "title": "Process PTO Taken",
                     "steps": [
                         {
-                            "id": null,
-                            "title": "stuff to do"
+                            "title": "stuff to do",
+                            "instructions": "instructions go here"
                         },
                         {
-                            "id": null,
-                            "title": "Save the file to external feed folder renamed as: #####"
+                            "title": "Save the file to external feed folder renamed as: #####",
+                            "instructions": "instructions go here"
                         },
                         {
-                            "id": null,
                             "title": "Clean File",
                             "steps": [
                                  {
-                                    "id": null,
-                                    "title": "Remove the table's totals row"
+                                    "title": "Remove the table's totals row",
+                                    "instructions": "instructions go here"
                                     
                                 },
                                 {
-                                    "id": null,
                                     "title": "Reformat columns",
+                                    "instructions": "instructions go here",
                                     "steps":
                                     [
                                         {
-                                            "id": null,
                                             "title": "Reformat date columns to 'short date'",
-                                            "note": "The [End Date] column is formatted as an integer while the [Start Date] is formatted 'mm-dd-yyy'.  Our tools cannot handle dates as integers and prefers 'yyyy-mm-dd'."
+                                            "instructions": "instructions go here",
+                                            "notes": [
+                                                {
+                                                    "type": "Info",
+                                                    "title": "Interesting",
+                                                    "body": "The [End Date] column is formatted as an integer while the [Start Date] is formatted 'mm-dd-yyy'.  Our tools cannot handle dates as integers and prefers 'yyyy-mm-dd'."
+                                                }
+                                            ]
                                         }
                                     ]
                                 }

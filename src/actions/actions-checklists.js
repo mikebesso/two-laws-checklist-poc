@@ -13,7 +13,7 @@ function reinitializeChecklists() {
                     payload: {}
                 }
             );
-            data.reinitializeChecklists();
+            data.checklists.reinitialize();
             dispatch(loadChecklists());
         }
     )                

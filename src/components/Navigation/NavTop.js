@@ -26,6 +26,9 @@ import {
       return(
         <UI.MenuBar>
           <NavItem>
+            <NavLink tag={Link} to="/control-panel">Control Panel</NavLink>
+          </NavItem>
+          <NavItem>
             <UserUI.component.UserButton />
           </NavItem>
         </UI.MenuBar>
