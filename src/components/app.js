@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { history } from "../middlewares/router-middleware";
-import ConnectedRouter from "./ConnectedRouter";
-
-
 
 
 import { Route, Switch, Redirect } from 'react-router-dom';
@@ -34,9 +30,6 @@ class App extends Component {
 
   render() {
     return (
-      <ConnectedRouter history={history}>
-
-  
           <div className="container-fluid h-100">
 
             <div className="row h-100">
@@ -79,7 +72,6 @@ class App extends Component {
             </div>
           </div>
 
-      </ConnectedRouter>  
     );
     
   }

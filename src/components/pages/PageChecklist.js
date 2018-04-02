@@ -10,7 +10,7 @@ class PageChecklist extends Component {
 
     render(){
         return(
-            <main className = "holygrail-main col-lg-7 col-xxl-9">
+            <main className = "holygrail-main col-12 container-fluid">
                 <ChecklistViewer />
             </main>
         )

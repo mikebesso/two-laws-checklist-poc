@@ -2,12 +2,13 @@ import actionTypes from './action-types';
 
 
 
+//  this is just a mock up for now
 
-
-const actions = {
-
-};
-
-
-
-export default actions;
+export function updateProfile(profile){
+    return(
+        {
+            action: actionTypes.UPDATE_PROFILE,
+            payload: profile
+        }
+    )
+}

@@ -6,6 +6,7 @@ import { isUndefined } from "util";
 import _ from "lodash";
 
 import UI from "../components/UI";
+import * as redux from "./redux";
 
 
 
@@ -13,16 +14,15 @@ export default React;
 
 export const fx = {
     react: React,
-    redux: {
-        bindActionCreators,
-        connect,
-        Link,
-        withRouter
-    },
+    bindActionCreators,
+    connect,
+    Link,
+    withRouter,
     utils: {
         isUndefined
     },
     _,
-    UI
+    UI,
+    redux
 
 }

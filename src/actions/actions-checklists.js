@@ -4,7 +4,7 @@ import actionTypes from "./action-types";
 import firebase from "firebase";
 
 
-function reinitializeChecklists() {
+export function reinitializeChecklists() {
     return(
         (dispatch) => {
             dispatch(
@@ -20,7 +20,7 @@ function reinitializeChecklists() {
 }
 
    
-function loadChecklists() {
+export function loadChecklists() {
    return(
         (dispatch) => {
             dispatch(
@@ -49,9 +49,3 @@ function loadChecklists() {
 }
 
 
-const actions = {
-    loadChecklists,
-    reinitializeChecklists
-};
-
-export default actions;

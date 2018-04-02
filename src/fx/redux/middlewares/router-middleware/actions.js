@@ -1,4 +1,5 @@
-import actionTypes from "./action-types";
+
+import actionTypes from "./action-types"
 
 function updateLocation(method) {
   return (...args) => ({
@@ -18,4 +19,3 @@ export const go = updateLocation("go");
 export const goBack = updateLocation("goBack");
 export const goForward = updateLocation("goForward");
 
-//export default { push, replace, go, goBack, goForward };

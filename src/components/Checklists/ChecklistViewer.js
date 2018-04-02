@@ -1,16 +1,12 @@
 
+import React, {fx} from "../../fx";
 
 
 
-import React, {Component} from 'react';
-import { withRouter } from 'react-router-dom';
-import { bindActionCreators } from 'redux';
-import { connect } from "react-redux";
 import { Media, ListGroup, ListGroupItem } from "reactstrap";
 
 import Stepper from "../UI/Stepper";
 
-import _ from "lodash";
 
 import icon from "../../img/arrow-alt-circle-right.svg";
 import actions from "../../actions";
@@ -19,8 +15,12 @@ import * as BS from "reactstrap";
 
 import ChecklistOutlineViewer from "./ChecklistOutlineViewer";
 import ChecklistStepperViewer from "./ChecklistStepperViewer";
+import ChecklistNotes from "./ChecklistNotes";
 
-class ChecklistViewer extends Component {
+
+import TagCloud from '../TagCloud';
+
+class ChecklistViewer extends React.Component {
 
     constructor(props){
         super(props);
@@ -57,7 +57,15 @@ class ChecklistViewer extends Component {
                     <h2>Description</h2>
                     {checklist.description}
                     
+                    {
+                        checklist["tags"]
+                        ? <TagCloud tags={checklist.tags} />
+                        : null
+                    }
+
+
                     <UI.Tabs>
+                        <ChecklistNotes tabTitle="Notes" notes={checklist.notes}/>
                         <ChecklistOutlineViewer tabTitle="Outline" checklist={checklist}/>
                         <ChecklistStepperViewer tabTitle="Stepper" checklist={checklist}/>
                     </UI.Tabs>
@@ -80,7 +88,7 @@ const mapStateToProps = (state) => (
 
 const mapDispatchToProps = dispatch => {
     return(
-        bindActionCreators(
+        fx.bindActionCreators(
             {
                 ...actions
             },
@@ -89,6 +97,6 @@ const mapDispatchToProps = dispatch => {
     );
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(ChecklistViewer));
+export default fx.connect(mapStateToProps, mapDispatchToProps)(fx.withRouter(ChecklistViewer));
 
 

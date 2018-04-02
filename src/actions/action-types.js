@@ -1,4 +1,4 @@
-
+import routerActionTypes from "../fx/redux/middlewares/router-middleware/action-types";
 
 const actionTypes = {
     LOAD_CHECKLISTS: "LOAD_CHECKLISTS",
@@ -19,8 +19,9 @@ const actionTypes = {
     ON_AUTH_STATE_CHANGE: "ON_AUTH_STATE_CHANGE",
     SIGN_IN: "SIGN_IN",
 
-    CALL_HISTORY_METHOD: "@@router/CALL_HISTORY_METHOD",
-    LOCATION_CHANGE: "@@router/LOCATION_CHANGE"
+    UPDATE_PROFILE: "UPDATE_PROFILE",
+
+    ...routerActionTypes
 
 };
 

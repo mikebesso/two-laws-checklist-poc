@@ -4,9 +4,9 @@ import actionTypes from "./action-types";
 import config from "../secrets/firebase-config.json"
 
 
-import history from "./actions-router";
+import * as routerActions from "./actions-router";
 
-function initializeFirebase(){
+export function initializeFirebase(){
 
     return(
         (dispatch) => {
@@ -52,7 +52,7 @@ function initializeFirebase(){
 
 }
 
-function signInWithGoogle(){
+export function signInWithGoogle(){
 
     return(
 
@@ -70,7 +70,7 @@ function signInWithGoogle(){
             firebase.auth().signInWithPopup(provider)
                 .then(
                     () => {
-                        dispatch(history.push("/"));
+                        dispatch(routerActions.push("/"));
                     }
 
                 );
@@ -81,13 +81,13 @@ function signInWithGoogle(){
 
 }
 
-function signOut(){
+export function signOut(){
     return(
        (dispatch) => {
             firebase.auth().signOut().then(
                 () => {
                     console.log("signed out");
-                    dispatch(history.push("/"));
+                    dispatch(routerActions.push("/"));
                 }
             )
             
@@ -97,11 +97,3 @@ function signOut(){
 
 
 
-
-const actions = {
-    initializeFirebase,
-    signInWithGoogle,
-    signOut
-};
-
-export default actions;

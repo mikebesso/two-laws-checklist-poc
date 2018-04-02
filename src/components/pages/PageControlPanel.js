@@ -23,7 +23,7 @@ class PageControlPanel extends fx.react.Component {
 
   render() {
     return (
-        <main className = "holygrail-main col-lg-7 col-xxl-9">
+        <main className = "holygrail-main col-12 container">
 
             <fx.UI.BS.Button onClick={() => {this.props.reinitializeChecklists()}}>Reinitialize</fx.UI.BS.Button>
 
@@ -45,7 +45,7 @@ const mapStateToProps = (state) => (
 
 const mapDispatchToProps = dispatch => {
     return(
-        fx.redux.bindActionCreators(
+        fx.bindActionCreators(
             {
                 ...actions
             },
@@ -54,7 +54,7 @@ const mapDispatchToProps = dispatch => {
     );
 }
 
-export default fx.redux.connect(mapStateToProps, mapDispatchToProps)(fx.redux.withRouter(PageControlPanel));
+export default fx.connect(mapStateToProps, mapDispatchToProps)(fx.withRouter(PageControlPanel));
 
 
 

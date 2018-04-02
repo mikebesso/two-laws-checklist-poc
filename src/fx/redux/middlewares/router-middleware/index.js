@@ -1,6 +1,7 @@
 
-import actionTypes from "../actions/action-types";
+import actionTypes from "./action-types";
 import createHistory from 'history/createBrowserHistory'
+
 
 
 

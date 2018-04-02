@@ -1,13 +1,12 @@
 import actionTypes from "./action-types";
 
-import firebaseActions from "./actions-firebase";
-import userActions from "./actions-users";
-import routerActions from "./actions-router";
+import * as firebaseActions from "./actions-firebase";
+import * as userActions from "./actions-users";
+import * as storeActions from "./actions-store";
 
+import * as checklistActions from "./actions-checklists";
 
-import actionChecklists from "./actions-checklists";
-
-
+import * as routerActions from "../fx/redux/middlewares/router-middleware/actions";
 
 
 const actions = {
@@ -17,7 +16,8 @@ const actions = {
     ...firebaseActions,
     ...userActions,
     ...routerActions,
-    ...actionChecklists
+    ...checklistActions,
+    ...storeActions
 
 }
 

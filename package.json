@@ -45,5 +45,17 @@
     "deploy": "firebase deploy",
     "build-css": "node-sass --source-map true --include-path src/styles/scss src/styles/scss/index.scss  src/styles/css/index.css",
     "watch-css": "node-sass src/styles/scss/index.scss -wo src/styles/css"
+  },
+  "devDependencies": {
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest": "^22.4.3",
+    "jest-environment-enzyme": "^6.0.0"
+  },
+  "jest": {
+    "testEnvironment": "enzyme",
+    "testEnvironmentOptions": {
+      "enzymeAdapter": "react16"
+    }
   }
 }

@@ -1,14 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { Router } from "react-router";
 
-import actionTypes from "../../actions/action-types"
+import actionTypes from "../action-types"
 
 /*
     isSSR:  is Server Side Rendering
 */
 
-class ConnectedRouter extends Component {
+class ConnectedRouter extends React.Component {
   static propTypes = {
     store: PropTypes.object,
     history: PropTypes.object.isRequired,
