@@ -9,9 +9,21 @@ import * as actionsFirebase from "./actions-firebase";
 export function initializeStore(){
     return(
        (dispatch) => {
-            dispatch(actionsFirebase.initializeFirebase())
+        
+            return(
+                (dispatch) => dispatch(actionsFirebase.initializeFirebase()
+            )
+            .then(
+                (dispatch) =>  {
+                    return(
+                        {
+                            action: actionTypes.STORE_INITIALIZED, 
+                            payload: {}
+                        }
+                    )
+                }
+            )
+        )
         }
     )
 }
-
-

@@ -1,19 +1,8 @@
-import React, {Component} from 'react';
-import { withRouter } from 'react-router-dom';
-import { bindActionCreators } from 'redux';
-import { connect } from "react-redux";
-import { Media, ListGroup, ListGroupItem } from "reactstrap";
+import React, {fx} from '../../fx';
 
-import Stepper from "../UI/Stepper";
 
-import _ from "lodash";
 
-import icon from "../../img/arrow-alt-circle-right.svg";
-import actions from "../../actions";
-import UI from "../UI";
-import * as BS from "reactstrap";
-
-class ChecklistStepperViewer extends Component {
+class ChecklistStepperViewer extends React.Component {
     
   
     continueStep(){
@@ -99,7 +88,14 @@ class ChecklistStepperViewer extends Component {
 
         return(
 
-            <Stepper tabTitle="Stepper" editable={true} steps={Steps['editable']} onContinue={() => this.continueStep()} onBack={() => this.backStep()} type="vertical" />
+            <fx.UI.Stepper 
+                tabTitle="Stepper" 
+                editable={true} 
+                steps={Steps['editable']} 
+                onContinue={() => this.continueStep()} 
+                onBack={() => this.backStep()} 
+                type="vertical" 
+            />
 
         )
 

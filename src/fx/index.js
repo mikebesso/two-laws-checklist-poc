@@ -8,14 +8,50 @@ import _ from "lodash";
 import UI from "../components/UI";
 import * as redux from "./redux";
 
+import actions from "../actions";
 
+import yup from "yup";
 
 export default React;
+
+
+
+
+const connectFx = (mapStateToProps) => {
+    return(
+        connect(
+            mapStateToProps,
+            (dispatch) => {
+                return(
+                    bindActionCreators(
+                        {
+                            ...actions
+                        },
+                        dispatch
+                    )
+                )
+            }
+        )
+    )
+}
+
+
+
+yup.match = function (key, message, func) {
+    message = message || 'Values do not match';
+    func = func || function (value) {
+      return value === this.options.context[key];
+    }
+  
+    return yup.mixed().test('match', message, func);
+  };
+
 
 export const fx = {
     react: React,
     bindActionCreators,
     connect,
+    connectFx,
     Link,
     withRouter,
     utils: {
@@ -23,6 +59,7 @@ export const fx = {
     },
     _,
     UI,
-    redux
+    redux,
+    yup
 
 }

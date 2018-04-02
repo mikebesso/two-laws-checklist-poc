@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 
 
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 
 //import Checklists from '../components/Checklists';
@@ -47,6 +47,7 @@ class App extends Component {
 
                     <Route path="/user/:component" component={Page.User}/>
                     
+
                     
                     <Route path="/checklist/:key" component={Page.Checklist} />
                     <Route path="/checklists" component={Page.Checklists} />

@@ -25,9 +25,14 @@ export default function(state = initialState, action) {
             newState = {...newState, onAuthStateChangeAttached: true};
             break;
 
-        case actions.types.ON_AUTH_STATE_CHANGE:
+        case actions.types.SET_USER_INFO:
             newState = {...newState, user: action.payload};
             break;
+
+        case actions.types.CLEAR_USER_INFO:
+            newState = {...newState, user: null, signIn: false};
+            break;
+
 
         case actions.types.SIGN_IN:
             newState = {...newState, signIn: action.payload};

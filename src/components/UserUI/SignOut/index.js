@@ -1,13 +1,13 @@
-import React from 'react';
+import React, {fx} from '../../../fx';
 
-import { auth } from '../../../firebase';
+
 
 const SignOutButton = () =>
   <button
     type="button"
-    onClick={auth.doSignOut}
+    onClick={this.props.signOut}
   >
     Sign Out
   </button>
 
-export default SignOutButton;
+export default fx.connectFx(SignOutButton);

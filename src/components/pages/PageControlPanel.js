@@ -6,16 +6,6 @@ import { Link } from 'react-router-dom';
 
 import React, {fx} from "../../fx";
 
-
-//import * as BS from "reactstrap";
-//import UI from "../UI";
-
-
-import actions from "../../actions";
-
-import data from "../../data";
-
-
 //import FontAwesome, {icons} from '../FontAwesome'
 
 
@@ -27,7 +17,7 @@ class PageControlPanel extends fx.react.Component {
 
             <fx.UI.BS.Button onClick={() => {this.props.reinitializeChecklists()}}>Reinitialize</fx.UI.BS.Button>
 
-            <fx.UI.BS.NavLink href="https://console.firebase.com" target="firebase">Firebase</fx.UI.BS.NavLink>
+            <fx.UI.BS.NavLink href="https://console.firebase.google.com" target="firebase">Firebase</fx.UI.BS.NavLink>
 
         </main>
 
@@ -43,18 +33,9 @@ const mapStateToProps = (state) => (
     } 
 );
 
-const mapDispatchToProps = dispatch => {
-    return(
-        fx.bindActionCreators(
-            {
-                ...actions
-            },
-            dispatch
-        )
-    );
-}
 
-export default fx.connect(mapStateToProps, mapDispatchToProps)(fx.withRouter(PageControlPanel));
+
+export default fx.connectFx(mapStateToProps)(fx.withRouter(PageControlPanel));
 
 
 

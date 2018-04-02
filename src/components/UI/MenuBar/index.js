@@ -17,7 +17,7 @@ import * as BS from 'reactstrap';
 class MenuBar extends Component {
 
     static defaultProps = {
-        homePath: "/user/signin",
+        homePath: "/",
         homeText: "Home"
     }
 

@@ -1,30 +1,21 @@
-import React, {Component} from 'react';
-import { withRouter } from 'react-router-dom';
-import { bindActionCreators } from 'redux';
-import { connect } from "react-redux";
-import { Media, ListGroup, ListGroupItem } from "reactstrap";
+import React, {fx} from '../../fx';
 
-import Stepper from "../UI/Stepper";
 
-import _ from "lodash";
 
-import icon from "../../img/arrow-alt-circle-right.svg";
-import actions from "../../actions";
-import UI from "../UI";
-import * as BS from "reactstrap";
 
-class ChecklistOutlineViewer extends Component {
+
+class ChecklistOutlineViewer extends React.Component {
 
     
     renderSteps(steps){
         return(
             <div>
-                <ListGroup>
+                <fx.UI.BS.ListGroup>
                     {
-                        _.flatMap(steps, this.renderStep.bind(this))
+                        fx._.flatMap(steps, this.renderStep.bind(this))
                     }
                     
-                </ListGroup>
+                </fx.UI.BS.ListGroup>
 
             </div>
         )
@@ -33,17 +24,17 @@ class ChecklistOutlineViewer extends Component {
     renderStep(d, i){
 
         return(
-            <ListGroupItem key={d.key} action>
-                <Media>
-                    <Media heading>{d.title}</Media>
-                    <Media body>
+            <fx.UI.BS.ListGroupItem key={d.key} action>
+                <fx.UI.BS.Media>
+                    <fx.UI.BS.Media heading>{d.title}</fx.UI.BS.Media>
+                    <fx.UI.BS.Media body>
                         {d.description}
-                    </Media>
-                </Media>
+                    </fx.UI.BS.Media>
+                </fx.UI.BS.Media>
                 
-                {_.has(d, "steps") ? this.renderSteps(d.steps) : null}
+                {fx._.has(d, "steps") ? this.renderSteps(d.steps) : null}
 
-            </ListGroupItem>
+            </fx.UI.BS.ListGroupItem>
         )
     }
 

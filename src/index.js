@@ -1,6 +1,6 @@
 
 // Styles
-import styles from 'bootstrap/dist/css/bootstrap.css';
+import  'bootstrap/dist/css/bootstrap.css';
 
 // Service workers for offline use
 import registerServiceWorker from './registerServiceWorker';

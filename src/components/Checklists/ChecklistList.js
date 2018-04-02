@@ -1,23 +1,18 @@
-import React from "react";
-import { connect } from "react-redux";
-import { bindActionCreators } from 'redux';
+import React, {fx} from '../../fx';
+
+
 import { isUndefined } from "util";
 
 import { Media, ListGroup, ListGroupItem } from "reactstrap";
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import _ from "lodash";
 
 
-import actions from "../../actions/index";
 
 import icon from "../../img/arrow-alt-circle-right.svg";
 
 class ChecklistList extends React.Component {
 
-    constructor(props){
-        super(props);
-
-     }
 
     componentDidMount() {
         this.props.loadChecklists();
@@ -79,15 +74,6 @@ const mapStateToProps = state => (
     }
 );
 
-const mapDispatchToProps = dispatch => {
-    return(
-        bindActionCreators(
-            {
-                ...actions
-            },
-            dispatch
-        )
-    );
-}
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ChecklistList));
+
+export default withRouter(fx.connectFx(mapStateToProps)(ChecklistList));

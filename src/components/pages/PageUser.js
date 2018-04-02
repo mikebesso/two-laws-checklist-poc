@@ -3,8 +3,8 @@ import { withRouter } from 'react-router-dom';
 import { connect } from "react-redux";
 
 
-import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
+
+
 
 
 //import actions from "../../actions/index";
@@ -13,9 +13,6 @@ import userUI from "../UserUI";
 
 class PageUser extends Component {
 
-    constructor(props){
-        super(props);
-    }
 
     static routes = {
         signIn: "/user/signin",
@@ -29,7 +26,6 @@ class PageUser extends Component {
 
         const componentName = this.props.match.params.component.toLowerCase();
 
-console.log(componentName)
 
         switch (componentName){
             case "signin": return(<userUI.component.SignIn />);

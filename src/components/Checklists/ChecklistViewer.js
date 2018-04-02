@@ -2,16 +2,8 @@
 import React, {fx} from "../../fx";
 
 
-
-import { Media, ListGroup, ListGroupItem } from "reactstrap";
-
-import Stepper from "../UI/Stepper";
-
-
-import icon from "../../img/arrow-alt-circle-right.svg";
 import actions from "../../actions";
-import UI from "../UI";
-import * as BS from "reactstrap";
+
 
 import ChecklistOutlineViewer from "./ChecklistOutlineViewer";
 import ChecklistStepperViewer from "./ChecklistStepperViewer";
@@ -64,11 +56,11 @@ class ChecklistViewer extends React.Component {
                     }
 
 
-                    <UI.Tabs>
+                    <fx.UI.Tabs>
                         <ChecklistNotes tabTitle="Notes" notes={checklist.notes}/>
                         <ChecklistOutlineViewer tabTitle="Outline" checklist={checklist}/>
                         <ChecklistStepperViewer tabTitle="Stepper" checklist={checklist}/>
-                    </UI.Tabs>
+                    </fx.UI.Tabs>
 
                </div>
             )
