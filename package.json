@@ -16,6 +16,7 @@
     "firebase": "^4.12.0",
     "formik": "^0.11.11",
     "history": "^4.7.2",
+    "jest-cli": "^22.4.3",
     "jquery": "^3.3.1",
     "lodash": "^4.17.5",
     "prop-types": "^15.6.1",
@@ -42,7 +43,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test --env=jsdom --verbose",
+    "coverage": "react-scripts test --env=jsdom --coverage",
     "eject": "react-scripts eject",
     "deploy": "firebase deploy",
     "build-css": "node-sass --source-map true --include-path src/styles/scss src/styles/scss/index.scss  src/styles/css/index.css",
@@ -53,11 +55,5 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "jest": "^22.4.3",
     "jest-environment-enzyme": "^6.0.0"
-  },
-  "jest": {
-    "testEnvironment": "enzyme",
-    "testEnvironmentOptions": {
-      "enzymeAdapter": "react16"
-    }
   }
 }
