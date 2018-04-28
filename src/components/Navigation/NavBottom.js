@@ -1,4 +1,5 @@
-import React, {fx} from "../../fx";
+import React from "react";
+import fx from "../../fx";
 
 
 
@@ -44,6 +45,6 @@ const mapStateToProps = (state) => (
 );
 
 
-export default fx.connectFx(mapStateToProps)(fx.withRouter(NavBottom));
+export default fx.AppStore.Connect(mapStateToProps)(NavBottom);
 
 

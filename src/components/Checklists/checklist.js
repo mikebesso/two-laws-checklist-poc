@@ -1,4 +1,6 @@
 import React from "react";
+import fx from "../../fx";
+
 import { isUndefined } from "util";
 import { bindActionCreators } from 'redux';
 import { connect } from "react-redux";
@@ -85,15 +87,5 @@ const mapStateToProps = state => (
     }
 );
 
-const mapDispatchToProps = dispatch => {
-    return(
-        bindActionCreators(
-            {
 
-            },
-            dispatch
-        )
-    );
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Checklist);
+export default fx.AppStore.Connect(mapStateToProps)(Checklist);

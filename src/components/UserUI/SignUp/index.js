@@ -1,7 +1,5 @@
-import React from 'react';
-import {
-  Link
-} from 'react-router-dom';
+import React from "react";
+
 
 //import { auth, db } from '../../../firebase';
 
@@ -20,7 +18,7 @@ const SignUpLink = () =>
   <p>
     Don't have an account?
     {' '}
-    <Link to="/user/signup">Sign Up</Link>
+    <a href="/user/signup">Sign Up</a>
   </p>
 
 export default SignUpPage;

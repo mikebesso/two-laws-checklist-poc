@@ -1,4 +1,6 @@
-import React, {fx} from "../../../fx";
+import React from "react";
+import fx from "../../../fx";
+
 
 import { Formik } from "formik";
 
@@ -126,4 +128,4 @@ class SignInWithEmail extends React.Component{
   
   
 
-export default fx.connectFx(mapStateToProps)(SignInWithEmail);
+export default fx.AppStore.Connect(mapStateToProps)(SignInWithEmail);

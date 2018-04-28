@@ -1,4 +1,6 @@
-import React, {fx} from '../../fx';
+import React from "react";
+import fx from "../../fx";
+
 
 
 

@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+
 
 import Login from '../Users/Login';
 
-export default class PageLogin extends Component {
+export default class PageLogin extends React.Component {
 
 
 
@@ -17,7 +17,7 @@ export default class PageLogin extends Component {
 
             <Login />
 
-            <Link to="/">Home</Link>
+            <a to="/">Home</a>
         </main>
 
     )

@@ -1,20 +1,21 @@
-import React, {Component} from 'react';
+import React from "react";
+import fx from "../../fx";
 
 import ChecklistViewer from '../Checklists/ChecklistViewer';
 
 
 
 
-class PageChecklist extends Component {
+class PageChecklist extends React.Component {
 
 
     render(){
         return(
-            <main className = "holygrail-main col-12 container-fluid">
+            <main className = "page-checklist holygrail-main col-12 container-fluid">
                 <ChecklistViewer />
             </main>
         )
     }
 }
 
-export default PageChecklist;
+export default fx.AppStore.Connect()(PageChecklist);

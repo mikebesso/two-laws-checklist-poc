@@ -1,6 +1,8 @@
-import React, {fx} from '../../../fx'
+import React from "react";
+import fx from "../../../fx";
 
-import { withRouter } from 'react-router-dom';
+
+//import { withRouter } from 'react-router-dom';
 
 import { SignUpLink } from '../SignUp';
 import { PasswordForgetLink } from '../PasswordForget';
@@ -71,7 +73,7 @@ const mapStateToProps = (state) => (
 
 
 
-export default fx.connectFx(mapStateToProps)(withRouter(SignInPage));
+export default fx.AppStore.Connect(mapStateToProps)(SignInPage);
 
 
 

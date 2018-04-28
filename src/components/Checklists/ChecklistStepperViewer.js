@@ -1,4 +1,5 @@
-import React, {fx} from '../../fx';
+import React from "react";
+import fx from "../../fx";
 
 
 
@@ -83,7 +84,9 @@ class ChecklistStepperViewer extends React.Component {
                 'content': (<div className={'e-caption'}>Summary</div>)
                 }
             ]
+
         };
+
 
 
         return(

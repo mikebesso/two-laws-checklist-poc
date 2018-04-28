@@ -1,5 +1,5 @@
-import React, {fx} from '../../../fx';
-
+import React from "react";
+import fx from "../../../fx";
 
 
 const SignOutButton = () =>
@@ -10,4 +10,4 @@ const SignOutButton = () =>
     Sign Out
   </button>
 
-export default fx.connectFx(SignOutButton);
+export default fx.AppStore.Connect(SignOutButton);

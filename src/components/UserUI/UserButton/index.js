@@ -1,9 +1,8 @@
-import React from 'react';
-import { withRouter } from "react-router-dom";
-import { bindActionCreators } from 'redux';
-import { connect } from "react-redux";
+import React from "react";
+import fx from "../../../fx";
 
-import actions from '../../../actions';
+
+
 
 import {
   ButtonDropdown,
@@ -84,17 +83,8 @@ const mapStateToProps = (state) => (
   } 
 );
 
-const mapDispatchToProps = (dispatch) => {
-    return(
-        bindActionCreators(
-            {
-                ...actions
-            },
-            dispatch
-        )
-    );
-  }
+
   
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(UserButton));
+export default fx.AppStore.Connect(mapStateToProps)(UserButton);
 
 

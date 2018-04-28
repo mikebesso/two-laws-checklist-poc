@@ -22,7 +22,6 @@ class ConnectedRouter extends React.Component {
 
   handleLocationChange = (location, action) => {
 
-    console.log("LOCATION_CHANGE", location, action)
     this.store.dispatch({
       type: actionTypes.LOCATION_CHANGE,
       payload: {
@@ -33,19 +32,20 @@ class ConnectedRouter extends React.Component {
   };
 
   componentWillMount() {
-      console.log("Mounting")
     const { store: propsStore, history, isSSR } = this.props;
     this.store = propsStore || this.context.store;
 
-    if (!isSSR)
+    if (!isSSR){
       this.unsubscribeFromHistory = history.listen(this.handleLocationChange);
+    }
 
     this.handleLocationChange(history.location);
   }
 
   componentWillUnmount() {
-    console.log("Unmounting")
-    if (this.unsubscribeFromHistory) this.unsubscribeFromHistory();
+    if (this.unsubscribeFromHistory) {
+      this.unsubscribeFromHistory();
+    }
   }
 
   render() {

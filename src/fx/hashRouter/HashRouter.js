@@ -1,0 +1,37 @@
+//import AppStore from "../redux";
+
+import RouterSwitch from "./RouterSwitch"
+import hashRouterReducers from "./reducers";
+//import hashRouterActionTypes from "./actions/actionTypes"
+import hashRouterActions from "./actions/hashRouterActions"
+import Decoder from "./Decoder";
+
+
+
+
+export default class HashRouter {
+
+  static decoder = null;
+
+  constructor(routes, aliases){
+    HashRouter.decoder = new Decoder(routes, aliases);
+  }
+  
+  static LookupURI = (uri, method) => HashRouter.decoder.lookupURI(uri, method);
+  LookupURI = (uri, method) => HashRouter.decoder.lookupURI(uri, method);
+
+  static MakeURI = (name, options) => HashRouter.decoder.makeURI(name, options);  
+  MakeURI = (name, options) => HashRouter.decoder.makeURI(name, options);
+
+  static BuildHREF = (name, options) => HashRouter.decoder.BuildHREF(name, options); 
+  BuildHREF = (name, options) => HashRouter.decoder.BuildHREF(name, options); 
+
+  static Actions = hashRouterActions;
+  Actions = hashRouterActions;
+
+  static Reducers = hashRouterReducers;
+  Reducers = hashRouterReducers;
+
+  static Switch = RouterSwitch;
+  Switch = RouterSwitch;
+}

@@ -1,15 +1,17 @@
-import React, {fx} from '../../fx';
+import React from "react";
+//import fx from "../../fx";
 
 
 import { isUndefined } from "util";
 
 import { Media, ListGroup, ListGroupItem } from "reactstrap";
-import { withRouter } from 'react-router-dom';
+//import { withRouter } from 'react-router-dom';
 import _ from "lodash";
 
 
 
 import icon from "../../img/arrow-alt-circle-right.svg";
+import fx from "../../fx";
 
 class ChecklistList extends React.Component {
 
@@ -20,9 +22,9 @@ class ChecklistList extends React.Component {
 
 
     renderItem(d, i){
-        console.log("renderItem", i, d, d.id);
-            return(
-            <ListGroupItem key={d.key} onClick={() => this.props.history.push(`/checklist/${d.key}`)} action>
+        
+        return(
+            <ListGroupItem key={d.key} onClick={() => this.props.navigateTo("checklist", {id:d.key})}>
         
                 <Media>
                     <Media left href="#" >
@@ -44,7 +46,7 @@ class ChecklistList extends React.Component {
         const { checklists, isLoaded } = this.props;
 
         
-        if (!isLoaded.checklists) {
+        if (!isLoaded.checklists) {                  
             return <div>Loading...</div>;
         }
 
@@ -76,4 +78,4 @@ const mapStateToProps = state => (
 
 
 
-export default withRouter(fx.connectFx(mapStateToProps)(ChecklistList));
+export default fx.AppStore.Connect(mapStateToProps)(ChecklistList);

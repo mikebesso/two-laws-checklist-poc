@@ -1,8 +1,9 @@
+import React from "react";
+import fx from "../../fx";
 
-import React, {fx} from "../../fx";
 
 
-import actions from "../../actions";
+//import actions from "../../store/actions";
 
 
 import ChecklistOutlineViewer from "./ChecklistOutlineViewer";
@@ -31,7 +32,7 @@ class ChecklistViewer extends React.Component {
 
     render(){
 
-
+debugger
         const { checklists, isLoaded } = this.props;
 
 
@@ -78,6 +79,7 @@ const mapStateToProps = (state) => (
     } 
 );
 
+/*
 const mapDispatchToProps = dispatch => {
     return(
         fx.bindActionCreators(
@@ -88,7 +90,7 @@ const mapDispatchToProps = dispatch => {
         )
     );
 }
-
-export default fx.connect(mapStateToProps, mapDispatchToProps)(fx.withRouter(ChecklistViewer));
+*/
+export default fx.AppStore.Connect(mapStateToProps)(ChecklistViewer);
 
 

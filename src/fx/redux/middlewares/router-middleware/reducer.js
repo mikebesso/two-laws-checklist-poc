@@ -1,4 +1,5 @@
 import actionTypes from "./action-types";
+import reducerLogger from "../../reducerLogger";
 
 
 const initialState = {
@@ -12,30 +13,24 @@ const initialState = {
  * if you have asynchronously-loaded routes, so reading from and relying on
  * this state is discouraged.
  */
-export default function routerReducer(state = initialState, action) {
-
-  console.log("routerReducer", action, state);
-  
-  let newState = state;
+const routerReducer  = (state = initialState, action) => {
 
   switch(action.type){
     
     case actionTypes.LOCATION_CHANGE:
 
       if (action.payload) {
-        newState = { ...state, location: action.payload.location, action: action.payload.action };      
+        return( { ...state, location: action.payload.location, action: action.payload.action });      
       } else {
-        newState = initialState;
+        return(initialState);
       }
-      break;
     
-      default: 
-      newState = state;
+    default: 
+      return(state);
 
     }
-  
-
-  console.log("reduced", newState);
-  return(newState);  
 
 }
+
+
+export default reducerLogger(routerReducer);

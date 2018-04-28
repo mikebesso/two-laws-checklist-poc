@@ -7,17 +7,17 @@ import PageChecklists from './PageChecklists';
 import PageControlPanel from './PageControlPanel';
 
 
-const Page = { 
-    Home: PageHome,
-    User: PageUser,        
-    Checklist: PageChecklist,
-    Checklists: PageChecklists,
-    ControlPanel: PageControlPanel
+const Pages = { 
+    home: PageHome,
+    user: PageUser,        
+    checklist: PageChecklist,
+    checklists: PageChecklists,
+    controlPanel: PageControlPanel
     
 }
 
 
 
-export default Page;
+export default Pages;
 
 

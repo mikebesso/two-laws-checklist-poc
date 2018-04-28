@@ -1,39 +1,17 @@
 import React from "react";
-import { bindActionCreators } from 'redux';
-import { connect } from "react-redux";
-import { Link, withRouter } from 'react-router-dom';
+import AppStore, {reducerLogger} from './redux';
+
+
 import { isUndefined } from "util";
 import _ from "lodash";
 
-import UI from "../components/UI";
-import * as redux from "./redux";
+import UI from "./UI";
 
-import actions from "../actions";
 
 import yup from "yup";
 
-export default React;
-
-
-
-
-const connectFx = (mapStateToProps) => {
-    return(
-        connect(
-            mapStateToProps,
-            (dispatch) => {
-                return(
-                    bindActionCreators(
-                        {
-                            ...actions
-                        },
-                        dispatch
-                    )
-                )
-            }
-        )
-    )
-}
+import HashRouter from "./hashRouter/HashRouter";
+import { initializeApp } from "firebase";
 
 
 
@@ -47,19 +25,48 @@ yup.match = function (key, message, func) {
   };
 
 
-export const fx = {
+
+const handleHashChange = () => {
+    console.log("ROUTE CHANGE");
+    AppStore.Dispatch(fx.HashRouter.Actions.handleHashChange())
+}
+
+const initializeFx = (routes, aliases) => {
+
+    /*const hashRouter = */ new fx.HashRouter(routes, aliases);
+
+
+    
+    window.addEventListener('hashchange', handleHashChange, false);
+    
+    // Set the initial route and render the app
+    AppStore.Dispatch(fx.HashRouter.Actions.handleHashChange())
+
+}  
+
+const fx = {
     react: React,
-    bindActionCreators,
-    connect,
-    connectFx,
-    Link,
-    withRouter,
+    //bindActionCreators,
+    //connect,
+    //connectFx,
+    //Link,
+    //withRouter,
     utils: {
         isUndefined
     },
     _,
     UI,
-    redux,
-    yup
+    //redux,
+    AppStore,
+    reducerLogger,
+    yup,
+    HashRouter,
+
+    initializeFx
 
 }
+
+
+
+
+export default fx;

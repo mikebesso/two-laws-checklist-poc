@@ -1,7 +1,6 @@
-import React, {fx} from "../../fx";
+import React from "react";
 
-
-
+import fx from "../../fx";
 
 class NavLeft extends React.Component {
 
@@ -28,6 +27,8 @@ const mapStateToProps = (state) => (
 );
 
 
-export default fx.connectFx(mapStateToProps)(fx.withRouter(NavLeft));
+export default fx.AppStore.Connect(mapStateToProps)(NavLeft);
+
+
 
 

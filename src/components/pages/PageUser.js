@@ -1,5 +1,6 @@
-import React, {Component} from 'react';
-import { withRouter } from 'react-router-dom';
+import React from "react";
+
+
 import { connect } from "react-redux";
 
 
@@ -11,7 +12,7 @@ import { connect } from "react-redux";
 import userUI from "../UserUI";
 
 
-class PageUser extends Component {
+class PageUser extends React.Component {
 
 
     static routes = {
@@ -59,5 +60,5 @@ const mapDispatchToProps = dispatch => {
 export default connect(mapStateToProps , mapDispatchToProps)(withRouter(PageUser));
 */
 
-export default connect()(withRouter(PageUser));
+export default connect()(PageUser);
 

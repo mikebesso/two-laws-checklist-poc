@@ -11,7 +11,9 @@
     "@fortawesome/react-fontawesome": "0.0.18",
     "adv": "^0.1.5",
     "axios": "^0.18.0",
+    "bloomer": "^0.6.3",
     "bootstrap": "^4.0.0",
+    "bulma": "^0.7.1",
     "classnames": "^2.2.5",
     "firebase": "^4.12.0",
     "formik": "^0.11.11",
@@ -54,6 +56,7 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "jest": "^22.4.3",
-    "jest-environment-enzyme": "^6.0.0"
+    "jest-environment-enzyme": "^6.0.0",
+    "mock-browser": "^0.92.14"
   }
 }
