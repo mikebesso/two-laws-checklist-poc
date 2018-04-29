@@ -8,19 +8,28 @@ import fx from "../../fx";
 
 class PageControlPanel extends React.Component {
 
-  render() {
-    return (
-        <main className = "page-control-panel holygrail-main col-12 container">
+    static Location = () => {
+        return("controlPanel", {})
+    }
+    static Href = () => {
+        const href = fx.HashRouter.BuildHREF("controlPanel");
+        return(href);
+    }
 
-            <fx.UI.BS.Button onClick={() => {this.props.reinitializeChecklists()}}>Reinitialize</fx.UI.BS.Button>
+    render() {
+        return (
+            <main className = "page-control-panel holygrail-main col-12 container">
 
-            <fx.UI.BS.NavLink href="https://console.firebase.google.com" target="firebase">Firebase</fx.UI.BS.NavLink>
+                <fx.UI.BS.Button onClick={() => {this.props.reinitializeChecklists()}}>Reinitialize</fx.UI.BS.Button>
 
-        </main>
+                <fx.UI.BS.NavLink href="https://console.firebase.google.com" target="firebase">Firebase</fx.UI.BS.NavLink>
 
-    )
-    
-  }
+            </main>
+
+        )
+    }
+
+
 }
 
 

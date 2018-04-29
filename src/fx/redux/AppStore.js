@@ -5,16 +5,11 @@ import React from 'react';
 import * as redux from 'redux';
 
 import { Provider, connect } from 'react-redux';
-//import createHistory from 'history/createBrowserHistory';
-//import { withRouter } from 'react-router';
 
 // middlewares
 import ReduxPromise from 'redux-promise';
 import thunk from 'redux-thunk';
 import externalInterfaceMiddleware from './middlewares/axios';
-
-//import routerMiddleware from './middlewares/router-middleware';
-//import ConnectedRouter from './middlewares/router-middleware/ConnectedRouter';
 
 //import axios from 'redux-axios/lib/middleware';
 import { logger } from 'redux-logger';
@@ -41,8 +36,7 @@ class AppStore {
     static reducers = null;
     static actions = null;
 
-    //static history = null;
-
+ 
     constructor(actions, reducers){
 
         if (AppStore.store !== null){
@@ -64,9 +58,6 @@ class AppStore {
 
 
 
-        //console.log("creating history")
-        //AppStore.history = createHistory()
-        //console.log(AppStore.history)
 
         // if we have action called "initializeStore", invoke it
         if (_.has(actions, "initializeStore")) {
@@ -80,18 +71,6 @@ class AppStore {
         const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || redux.compose;
 
 
-/*
-        const createStoreWithMiddleware = redux.applyMiddleware(
-            logger,  
-            ReduxPromise, 
-            thunk,
-            externalInterfaceMiddleware,
-            routerMiddleware
-          )(redux.createStore);
-          
-    
-        return(createStoreWithMiddleware(AppStore.reducers))
-*/
         const store = redux.createStore(
             reducers, 
             /* preloadedState, */ 
@@ -100,7 +79,6 @@ class AppStore {
                     logger,  
                     ReduxPromise, 
                     thunk,
-                    //routerMiddleware
                     externalInterfaceMiddleware
                 )
             )
@@ -122,55 +100,17 @@ class AppStore {
                 {props.children}
             </Provider>
         )
-/*
-        return(
-            <Provider store={AppStore.store}>
-                <ConnectedRouter history={AppStore.history}>
-                    {props.children}
-                </ConnectedRouter>
-            </Provider>
-        )
-       */
+
     }
 
     Provider = (props) => {
         return(AppStore.Provider(props));
     }
 
-    /*
-    static connectToStore = (mapStateToProps, actions) => {
-
-        // TODO:  Add with router
-
-        return(
-            (component) => {
-                    connect(
-                        mapStateToProps,
-                        AppStore.actions
-                    )
-            }
-        )
-
-    }    
-*/
+    
 
     static Connect = (mapStateToProps) => {
 
-        /*
-        return(
-            (Component) => {
-                return(    
-                    withRouter(
-                        connect(
-                            mapStateToProps,
-                            (dispatch) => redux.bindActionCreators({...AppStore.actions}, dispatch) 
-                        )(Component)
-                    )
-                )
-            }
-        ) 
-
-        */
 
         return(
             (Component) => {
@@ -180,12 +120,7 @@ class AppStore {
                         mapStateToProps,
                         (dispatch) => redux.bindActionCreators({...AppStore.actions}, dispatch) 
                     )(Component)
-/*
-                    withRouter(connect(
-                            mapStateToProps,
-                            (dispatch) => redux.bindActionCreators({...AppStore.actions}, dispatch) 
-                        )(Component))
-                        */
+
                 )
             }
         ) 

@@ -4,18 +4,16 @@ import PasswordForget from "./PasswordForget";
 import SignIn from "./SignIn";
 import SignOut from "./SignOut";
 import SignUp from "./SignUp";
-import UserButton from "./UserButton";
+import NavbarUser from "./NavbarUser";
 
 
 
 export default {
-    component: {
         Account,
         PasswordChange,
         PasswordForget,
         SignIn,
         SignOut,
         SignUp,
-        UserButton
-    }
+        NavbarUser
 }

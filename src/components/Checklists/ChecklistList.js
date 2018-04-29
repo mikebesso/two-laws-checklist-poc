@@ -12,6 +12,7 @@ import _ from "lodash";
 
 import icon from "../../img/arrow-alt-circle-right.svg";
 import fx from "../../fx";
+import Pages from "../pages";
 
 class ChecklistList extends React.Component {
 
@@ -20,14 +21,17 @@ class ChecklistList extends React.Component {
         this.props.loadChecklists();
     }
 
+    NavigateToChecklist = (id) => {
+        this.props.navigateTo("checklist", {id})
+    }
 
     renderItem(d, i){
         
         return(
-            <ListGroupItem key={d.key} onClick={() => this.props.navigateTo("checklist", {id:d.key})}>
+            <ListGroupItem key={d.key} onClick={() => this.NavigateToChecklist(d.key)}>
         
                 <Media>
-                    <Media left href="#" >
+                    <Media left href={Pages.checklist.Href(d.key)} >
                         <Media object src = {`${icon}`} alt="image" width="60px"/>
                     </Media>
                     <Media body>

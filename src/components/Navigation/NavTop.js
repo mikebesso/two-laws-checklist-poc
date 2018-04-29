@@ -1,10 +1,12 @@
 import React from "react";
-//import fx from "../../fx";
+import UserUI from "../UserUI";
 import {Navbar, NavbarBrand, NavbarBurger, NavbarStart, NavbarItem, NavbarLink, NavbarEnd, NavbarMenu, NavbarDropdown, NavbarDivider, Field, Control, Button, Icon} from "bloomer";
 
+import Pages from "../pages";
 
 //import UserUI from "../UserUI";
 import "bulma/css/bulma.css"
+
 
 
   class NavTop extends React.Component {
@@ -38,7 +40,7 @@ return(
               <NavbarItem hasDropdown isHoverable>
                   <NavbarLink href='#/documentation'>Documentation</NavbarLink>
                   <NavbarDropdown>
-                      <NavbarItem href='#/'>One A</NavbarItem>
+                      <NavbarItem href={Pages.controlPanel.Href()}>Control Panel</NavbarItem>
                       <NavbarItem href='#/'>Two B</NavbarItem>
                       <NavbarDivider />
                       <NavbarItem href='#/'>Two A</NavbarItem>
@@ -64,6 +66,7 @@ return(
                       </Control>
                   </Field>
               </NavbarItem>
+              <UserUI.NavbarUser />
           </NavbarEnd>
       </NavbarMenu>
       </Navbar>

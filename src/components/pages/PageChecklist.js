@@ -2,18 +2,26 @@ import React from "react";
 import fx from "../../fx";
 
 import ChecklistViewer from '../Checklists/ChecklistViewer';
-
+import * as Bloomer from "bloomer";
 
 
 
 class PageChecklist extends React.Component {
 
+    static Location = (id) => {
+        return("checklist", {id})
+    }
+    static Href = () => {
+        const href = fx.HashRouter.BuildHREF("checklist");
+        return(href);
+    }
 
     render(){
+        
         return(
-            <main className = "page-checklist holygrail-main col-12 container-fluid">
+            <Bloomer.Container>
                 <ChecklistViewer />
-            </main>
+            </Bloomer.Container>
         )
     }
 }

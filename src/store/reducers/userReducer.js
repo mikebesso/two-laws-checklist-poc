@@ -13,6 +13,15 @@ export const userReducer = (state = anonymousUser, action) => {
 
     switch (action.type) {
         
+        case actions.types.ON_AUTH_STATE_CHANGE:
+            return (
+                {
+                    ...state, 
+                    name: action.payload.displayName, 
+                    email: action.payload.email
+                }
+            );        
+
         case actions.types.SET_USER_INFO:
             return (
                 {

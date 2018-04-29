@@ -20,6 +20,9 @@ export const firebaseReducer = (state = initialState, action) => {
         case actions.types.ATTACHED_ON_AUTH_STATE_CHANGE:
             return ({...state, onAuthStateChangeAttached: true});
 
+        case actions.types.ON_AUTH_STATE_CHANGE:
+            return ({...state, user: action.payload});
+            
         case actions.types.SET_USER_INFO:
             return ({...state, user: action.payload});
 

@@ -7,7 +7,6 @@ const handleHashChange = () => {
   var location = Decoder.LookupURI(newURI);
   var canonicalURI = location.name && Decoder.MakeURI(location.name, location.options);
 
-  
   if (!canonicalURI || canonicalURI === newURI) {
     return(
       {
@@ -20,7 +19,6 @@ const handleHashChange = () => {
     return(navigateTo(location.name, location.options));
   }
   else {
-    debugger
     return(navigateTo("home", {}))
   }
 }

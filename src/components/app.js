@@ -59,13 +59,19 @@ class App extends React.Component {
 
   render() {
     return (
-          <section className="hero is-info is-fullheight">
+      <Bloomer.Container>
 
-            <div className="hero-head">
-              {this.renderNavTop()}
-            </div>
+          {this.renderNavTop()}
 
-            <div className="hero-body">
+          <Bloomer.Hero isColor='info' isSize='small'>
+
+            <Bloomer.HeroHeader>
+              <Bloomer.Container hasTextAlign="centered">
+                <Bloomer.Title>Welcome</Bloomer.Title>
+              </Bloomer.Container>
+            </Bloomer.HeroHeader>
+
+            <Bloomer.HeroBody>
 
               <Bloomer.Columns>
 
@@ -88,14 +94,14 @@ class App extends React.Component {
               </Bloomer.Column>
 
               </Bloomer.Columns>
-            </div>
+            </Bloomer.HeroBody>
 
-            <div className="hero-foot">
+            <Bloomer.HeroFooter>
            
               <div>nav bottom</div>
-            </div>
-          </section>
-
+            </Bloomer.HeroFooter>
+            </Bloomer.Hero >
+          </Bloomer.Container>
     );
 
   }

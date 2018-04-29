@@ -3,19 +3,17 @@ import actionTypes from "./action-types";
 
 import config from "../../secrets/firebase-config.json"
 
-
-import * as routerActions from "./actions-router";
-
+import fx from "../../fx";
 
 // this is a closure so that onAuthStateChanged has access to dispatch
 
 export function initializeFirebase(){
 
+    
     return(
         (dispatch) => {
-
+            
             if (!firebase.apps.length) {
-                firebase.initializeApp(config);
 
                 dispatch( {
                     type: actionTypes.FIREBASE_INITIALIZED,
@@ -69,7 +67,7 @@ export function signInWithGoogle(){
             firebase.auth().signInWithPopup(provider)
                 .then(
                     () => {
-                        dispatch(routerActions.push("/"));
+                        dispatch(fx.HashRouter.Actions.navigateTo("home"));
                     }
 
                 );
@@ -86,7 +84,7 @@ export function signOut(){
             firebase.auth().signOut().then(
                 () => {
                     console.log("signed out");
-                    dispatch(routerActions.push("/"));
+                    dispatch(fx.HashRouter.Actions.navigateTo("home"));
                 }
             )
             
@@ -110,7 +108,7 @@ export function signInWithEmailAndPassword(email, password){
             firebase.auth().signInWithEmailAndPassword(email, password)
                 .then(
                     () => {
-                        dispatch(routerActions.push("/"));
+                        dispatch(fx.HashRouter.Actions.navigateTo("home"));
                     }
 
                 );
@@ -137,7 +135,7 @@ export function signUpWithEmailAndPassword(email, password){
             firebase.auth().createUserWithEmailAndPassword(email, password)
                 .then(
                     () => {
-                        dispatch(routerActions.push("/"));
+                        dispatch(fx.HashRouter.Actions.navigateTo("home"));
                     }
 
                 );
