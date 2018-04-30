@@ -10,8 +10,10 @@
     }
   }
 
+  // firebase database keys are case sensitive, there for our paths must be case sensitive.
+  //   we cannot convert to lower case.
   function pathParts(path) {
-    return path === '' ? [] : path.toLowerCase().split('/')
+    return path === '' ? [] : path.split('/')
   }
 
   function routeParts(route) {
@@ -170,7 +172,7 @@
       },
 
 
-      makeURI: function(name, options) {
+      makeURI: function(name, options = {}) {
         options = options || {}
 
         var params = routesParams[name] || []

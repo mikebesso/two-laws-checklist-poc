@@ -17,11 +17,6 @@ class ChecklistViewer extends React.Component {
 
     constructor(props){
         super(props);
-
-        
-
-
-
     }
 
 
@@ -35,21 +30,20 @@ class ChecklistViewer extends React.Component {
     render(){
 
         const key = this.props.hashRouter.location.options.id;
-        
         const { checklists, isLoaded } = this.props;
 
 
         if (!isLoaded.checklists){
             return(<div>loading</div>)
         }
-
+        
         const checklist = checklists[key];
 
         if (!checklist){
             return(<div>checklist {key} not found</div>)
         }
 
-debugger
+
         return(
             <div>
 

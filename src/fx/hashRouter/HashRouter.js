@@ -20,11 +20,11 @@ export default class HashRouter {
   static LookupURI = (uri, method) => HashRouter.decoder.lookupURI(uri, method);
   LookupURI = (uri, method) => HashRouter.decoder.lookupURI(uri, method);
 
-  static MakeURI = (name, options) => HashRouter.decoder.makeURI(name, options);  
-  MakeURI = (name, options) => HashRouter.decoder.makeURI(name, options);
+  static MakeURI = (name, options = {}) => HashRouter.decoder.makeURI(name, options);  
+  MakeURI = (name, options = {}) => HashRouter.decoder.makeURI(name, options);
 
-  static BuildHREF = (name, options) => HashRouter.decoder.BuildHREF(name, options); 
-  BuildHREF = (name, options) => HashRouter.decoder.BuildHREF(name, options); 
+  static BuildHREF = (name, options = {}) => HashRouter.decoder.BuildHREF(name, options); 
+  BuildHREF = (name, options = {}) => HashRouter.decoder.BuildHREF(name, options); 
 
   static Actions = hashRouterActions;
   Actions = hashRouterActions;

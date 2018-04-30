@@ -27,15 +27,18 @@ class ChecklistList extends React.Component {
 
     renderItem(d, i){
         
+        
+        const href = Pages.checklist.Href(d.key);
+
         return(
             <ListGroupItem key={d.key} onClick={() => this.NavigateToChecklist(d.key)}>
         
                 <Media>
-                    <Media left href={Pages.checklist.Href(d.key)} >
+                    <Media left href={href} >
                         <Media object src = {`${icon}`} alt="image" width="60px"/>
                     </Media>
                     <Media body>
-                        <Media heading>{d.title}</Media>
+                        <Media heading>{d.title} {d.key}</Media>
                         description goes here
                     </Media>
                 </Media>

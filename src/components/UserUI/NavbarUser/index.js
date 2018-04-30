@@ -24,8 +24,7 @@ class NavbarUser extends React.Component {
 
   render() {
 
-    debugger
-     
+    
     if (this.props.firebase.user) {
         return(
             <Bloomer.NavbarItem hasDropdown isHoverable>

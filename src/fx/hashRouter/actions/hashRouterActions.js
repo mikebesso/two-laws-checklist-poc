@@ -23,7 +23,7 @@ const handleHashChange = () => {
   }
 }
 
-const navigateTo = (name, options) => {
+const navigateTo = (name, options = {}) => {
 
   
   var currentURI = window.location.hash.substr(1);

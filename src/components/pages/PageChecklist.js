@@ -11,8 +11,8 @@ class PageChecklist extends React.Component {
     static Location = (id) => {
         return("checklist", {id})
     }
-    static Href = () => {
-        const href = fx.HashRouter.BuildHREF("checklist");
+    static Href = (id) => {
+        const href = fx.HashRouter.BuildHREF("checklist", {id}) ;
         return(href);
     }
 

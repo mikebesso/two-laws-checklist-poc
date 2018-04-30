@@ -16,7 +16,14 @@ class RouteNotFound extends React.Component{
             </div>
         )
     }
+}
 
+class Loading extends React.Component{
+    render = () => {
+        return(
+            <div>Loading... Thank you for your patience</div>
+        )
+    }
 }
 
 class RouterSwitch extends React.Component{
@@ -29,7 +36,9 @@ class RouterSwitch extends React.Component{
         let retVal = null;
         let defaultSpecified = _.has(this.props, "defaultComponent")
 
-        if (_.has(map, location.name)) {
+        if (!_.has(location, "name")){
+            retVal = <Loading />
+        } else if (_.has(map, location.name)) {
             retVal = React.createElement(map[location.name], this.props);
         } else if (defaultSpecified)
         {
