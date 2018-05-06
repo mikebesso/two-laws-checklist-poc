@@ -13,13 +13,15 @@ class PageSignOut extends React.Component {
         return(href);
     }
 
-    render = () => {
-    
-        return (
-        <Bloomer.Button onClick={this.props.signOut()}>
-            Sign Out
+    SignOut = () => {
+        fx.Firebase.SignOut()
+    }
 
-        </Bloomer.Button>
+    render = () => {
+        return (
+            <Bloomer.Button onClick={this.SignOut}>
+                Sign Out
+            </Bloomer.Button>
         )
     }
 }

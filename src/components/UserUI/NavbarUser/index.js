@@ -24,11 +24,10 @@ class NavbarUser extends React.Component {
 
   render() {
 
-    
-    if (this.props.firebase.user) {
+    if (this.props.firebase.authenticated) {
         return(
             <Bloomer.NavbarItem hasDropdown isHoverable>
-                <Bloomer.NavbarLink href="#">{this.props.user.name}</Bloomer.NavbarLink>
+                <Bloomer.NavbarLink href="#">{this.props.firebase.name}</Bloomer.NavbarLink>
                 <Bloomer.NavbarDropdown>
                     <Bloomer.NavbarItem href={Pages.signOut.Href()}>Sign out</Bloomer.NavbarItem>
                     <Bloomer.NavbarItem href="#">Profile</Bloomer.NavbarItem>
@@ -61,8 +60,8 @@ class NavbarUser extends React.Component {
 
 const mapStateToProps = (state) => (
   {
-      user: state.user,
-      firebase: state.firebase
+      firebase: state.firebase,
+      hashRouter: state.hashRouter
   } 
 );
 

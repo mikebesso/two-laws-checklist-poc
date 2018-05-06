@@ -11,7 +11,8 @@ import UI from "./UI";
 import yup from "yup";
 
 import HashRouter from "./hashRouter/HashRouter";
-import { initializeApp } from "firebase";
+
+import Firebase from "./firebase";
 
 
 
@@ -28,19 +29,21 @@ yup.match = function (key, message, func) {
 
 const handleHashChange = () => {
     console.log("ROUTE CHANGE");
+    
     AppStore.Dispatch(fx.HashRouter.Actions.handleHashChange())
 }
 
-const initializeFx = (routes, aliases) => {
+const initializeFx = (actions, reducers, routes, aliases, firebaseConfig) => {
 
-    /*const hashRouter = */ new fx.HashRouter(routes, aliases);
+   new fx.AppStore(actions, reducers);
 
-
-    
+    new fx.HashRouter(routes, aliases);
     window.addEventListener('hashchange', handleHashChange, false);
     
     // Set the initial route and render the app
     AppStore.Dispatch(fx.HashRouter.Actions.handleHashChange())
+
+    new fx.Firebase(firebaseConfig);
 
 }  
 
@@ -62,7 +65,9 @@ const fx = {
     yup,
     HashRouter,
 
-    initializeFx
+    initializeFx,
+    Firebase
+   
 
 }
 

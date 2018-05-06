@@ -25,7 +25,7 @@ class App extends React.Component {
 
     const map = Pages;
 
-
+   
     return(
       
       <fx.HashRouter.Switch map={map}  />
@@ -114,7 +114,8 @@ const mapStateToProps = (state) => (
         checklists: state.checklists,
         user: state.user,
         isLoaded: state.isLoaded,
-        location: state.location
+        location: state.location,
+        hashRouter: state.hashRouter
     } 
 );
 

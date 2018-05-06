@@ -19,8 +19,9 @@ class PageSignIn extends React.Component {
 
     render = () => {
     
+      
         return(
-        (!this.props.firebase.user )
+        (!this.props.firebase.authenticated )
         ?
           (
             <Bloomer.Container isFluid>
@@ -29,7 +30,7 @@ class PageSignIn extends React.Component {
 
                 <Bloomer.Column>
                   <Bloomer.Button
-                    onClick={() => this.props.signInWithGoogle()}
+                    onClick={fx.Firebase.SignInWithGoogle}
                   >
                     Sign In With Google
                   </Bloomer.Button>

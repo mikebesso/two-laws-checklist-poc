@@ -20,7 +20,8 @@ import hashRouterReducers from "../hashRouter/reducers";
 
 import _ from "lodash";
 import hashRouterActions from '../hashRouter/actions/hashRouterActions';
- 
+
+import firebaseReducers from "../firebase/reducers";
 
 class AppStoreException {
     constructor(message) {
@@ -50,7 +51,8 @@ class AppStore {
         AppStore.reducers = redux.combineReducers(
             {
                 ...reducers,
-                ...hashRouterReducers
+                ...hashRouterReducers,
+                ...firebaseReducers
             }
         );
 
@@ -59,10 +61,7 @@ class AppStore {
 
 
 
-        // if we have action called "initializeStore", invoke it
-        if (_.has(actions, "initializeStore")) {
-            AppStore.Dispatch(AppStore.actions.initializeStore());
-        }
+
     }
 
     static createStore = (reducers) => {

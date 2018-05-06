@@ -23,7 +23,11 @@ import App from './components/app';
 
 import './styles/css/index.css';
 
-import MyStore from "./store";
+import reducers from './store/reducers';
+import actions from './store/actions';
+
+import firebaseConfig from "./secrets/firebase-config.json"
+
 import fx from "./fx";
 
 
@@ -49,29 +53,15 @@ import fx from "./fx";
   }  
 
 
-fx.initializeFx(routes, aliases);
+fx.initializeFx(actions, reducers, routes, aliases, firebaseConfig);
 
-// move to initialize fx
-/*
-const hashRouter = new fx.HashRouter(routes, aliases)
-
-const handleHashChange = () => {
-    console.log("ROUTE CHANGE");
-    fx.AppStore.Dispatch(fx.HashRouter.Actions.handleHashChange())
-}
-
-window.addEventListener('hashchange', handleHashChange, false);
-
-// Set the initial route and render the app
-fx.AppStore.Dispatch(fx.HashRouter.Actions.handleHashChange())
-*/
 
 
 ReactDOM.render(
     (
-        <MyStore.Provider>
+        <fx.AppStore.Provider>
            <App />
-        </MyStore.Provider>
+        </fx.AppStore.Provider>
         
     ), 
     document.getElementById('root')

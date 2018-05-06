@@ -2,7 +2,7 @@ import * as firebase from 'firebase';
 
 import config from "../secrets/firebase-config.json"
 
-
+/*
 firebase.initializeApp(config);
 
 
@@ -13,3 +13,5 @@ export {
   db,
   auth,
 };
+
+*/

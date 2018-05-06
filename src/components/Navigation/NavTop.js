@@ -1,8 +1,10 @@
 import React from "react";
+import fx from "../../fx";
 import UserUI from "../UserUI";
 import {Navbar, NavbarBrand, NavbarBurger, NavbarStart, NavbarItem, NavbarLink, NavbarEnd, NavbarMenu, NavbarDropdown, NavbarDivider, Field, Control, Button, Icon} from "bloomer";
 
 import Pages from "../pages";
+
 
 //import UserUI from "../UserUI";
 import "bulma/css/bulma.css"
@@ -20,7 +22,6 @@ import "bulma/css/bulma.css"
 return(
       <Navbar 
         style={{ border: 'solid 1px #00D1B2', margin: '0' }}
-        {...props}
       >
       <NavbarBrand>
           <NavbarItem>
@@ -87,4 +88,14 @@ return(
   }
 
 
-export default NavTop;
+  const mapStateToProps = (state) => (
+    {
+        checklists: state.checklists,
+        user: state.user,
+        isLoaded: state.isLoaded,
+        hashRouter: state.hashRouter
+          
+    } 
+);  
+
+export default fx.AppStore.Connect(mapStateToProps)(NavTop);

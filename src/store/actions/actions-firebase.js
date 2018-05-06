@@ -5,51 +5,39 @@ import config from "../../secrets/firebase-config.json"
 
 import fx from "../../fx";
 
-// this is a closure so that onAuthStateChanged has access to dispatch
 
-export function initializeFirebase(){
+firebase.initializeApp(config);
 
+
+const firebaseDatabase = firebase.database();
+const firebaseAuth = firebase.auth();
+
+export {
+    firebaseDatabase,
+    firebaseAuth,
+};
+
+
+
+const handleOnAuthStateChanged = (user) => {
     
     return(
-        (dispatch) => {
-            
-            if (!firebase.apps.length) {
-
-                dispatch( {
-                    type: actionTypes.FIREBASE_INITIALIZED,
-                    payload: true
-                })
-
+        fx.AppStore.Dispatch(
+            {
+                type: actionTypes.ON_AUTH_STATE_CHANGE,
+                payload: user
             }
-
-            firebase.auth().onAuthStateChanged(
-                (user) => {
-                    return(
-                        dispatch(
-                            {
-                                type: actionTypes.ON_AUTH_STATE_CHANGE,
-                                payload: user
-                            }
-                        )
-                    )
-                }
-            )
-
-            return(
-                dispatch( 
-                    {
-                        type: actionTypes.ATTACHED_ON_AUTH_STATE_CHANGE,
-                        payload: true
-                    }
-                )
-            )
-            
-        }
+        )
     )
-
 }
 
-export function signInWithGoogle(){
+
+firebase.auth().onAuthStateChanged(handleOnAuthStateChanged);
+
+
+
+
+export function firebaseSignInWithGoogle(){
 
     return(
 
@@ -78,7 +66,7 @@ export function signInWithGoogle(){
 
 }
 
-export function signOut(){
+export function firebaseSignOut(){
     return(
        (dispatch) => {
             firebase.auth().signOut().then(
@@ -93,7 +81,7 @@ export function signOut(){
 }
 
 
-export function signInWithEmailAndPassword(email, password){
+export function firebaseSignInWithEmailAndPassword(email, password){
 
     return(
 
@@ -120,7 +108,7 @@ export function signInWithEmailAndPassword(email, password){
 }
 
 
-export function signUpWithEmailAndPassword(email, password){
+export function firebaseSignUpWithEmailAndPassword(email, password){
 
     return(
 
@@ -145,4 +133,5 @@ export function signUpWithEmailAndPassword(email, password){
 
 
 }
+
 

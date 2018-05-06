@@ -34,4 +34,18 @@ export default class HashRouter {
 
   static Switch = RouterSwitch;
   Switch = RouterSwitch;
+
+  static NavigateTo = (name, options) => {
+
+    var currentURI = window.location.hash.substr(1);
+    var newURI = Decoder.MakeURI(name, options);
+
+    if (currentURI !== newURI) {
+
+      const newLocation = window.location.pathname + window.location.search + '#' + newURI;
+      window.location.replace(newLocation);
+    }
+  }
+  NavigateTo = HashRouter.NavigateTo;
+
 }

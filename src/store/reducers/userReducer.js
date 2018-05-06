@@ -2,6 +2,7 @@ import fx from "../../fx";
 import actions from '../actions';
 
 
+
 export const anonymousUser = {
     name: "anonymous",
     email: ""
@@ -10,15 +11,21 @@ export const anonymousUser = {
 export const userReducer = (state = anonymousUser, action) => {
 
     let newState = state;
+    let user = anonymousUser;
+/*
+    if (fx._.has(action, "payload") && fx._.has(action.payload, "name")){
+        user = action.payload;
+    }
+*/
 
     switch (action.type) {
         
-        case actions.types.ON_AUTH_STATE_CHANGE:
+        case fx.Firebase.actionTypes.ON_AUTH_STATE_CHANGE:
+            
             return (
                 {
                     ...state, 
-                    name: action.payload.displayName, 
-                    email: action.payload.email
+                    ...user
                 }
             );        
 
@@ -26,8 +33,7 @@ export const userReducer = (state = anonymousUser, action) => {
             return (
                 {
                     ...state, 
-                    name: action.payload.displayName, 
-                    email: action.payload.email
+                    ...user
                 }
             );
 

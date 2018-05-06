@@ -1,4 +1,3 @@
-import routerActionTypes from "../../fx/redux/middlewares/router-middleware/action-types";
 
 
 const actionTypes = {
@@ -15,18 +14,11 @@ const actionTypes = {
     SET_USER_INFO: "SET_USER_INFO",
     CLEAR_USER_INFO: "CLEAR_USER_INFO",
 
-    FIREBASE_INITIALIZED: "FIREBASE_INITIALIZED",
-    ATTACHED_ON_AUTH_STATE_CHANGE: "ATTACHED_ON_AUTH_STATE_CHANGE",
-    ON_AUTH_STATE_CHANGE: "ON_AUTH_STATE_CHANGE",
-    SIGN_IN: "SIGN_IN",
-    SIGN_UP: "SIGN_UP",
+
 
     UPDATE_PROFILE: "UPDATE_PROFILE",
 
-    STORE_INITIALIZED: "STORE_INITIALIZED",
-  
-
-    ...routerActionTypes
+    STORE_INITIALIZED: "STORE_INITIALIZED"
 
 };
 

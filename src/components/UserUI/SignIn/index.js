@@ -26,7 +26,7 @@ class SignInPage extends React.Component {
                   <fx.UI.BS.Row>
                     <fx.UI.BS.Col className="text-center col-sm-4">
                       <fx.UI.BS.Button
-                        onClick={() => this.props.signInWithGoogle()}
+                        onClick={() => this.props.firebaseSignInWithGoogle()}
                       >
                         Sign In With Google
                       </fx.UI.BS.Button>
