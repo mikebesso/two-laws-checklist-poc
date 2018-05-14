@@ -21,7 +21,7 @@ import App from './components/app';
 
 
 
-import './styles/css/index.css';
+//import './styles/css/index.css';
 
 import reducers from './store/reducers';
 import actions from './store/actions';
@@ -45,7 +45,8 @@ import fx from "./fx";
     signIn: 'GET /signin',
     signUp: 'GET /signup',
     signOut: 'GET /signout',
-    notFound: 'GET /notfound'
+    notFound: 'GET /notfound',
+    scratch: 'GET /scratch'
   }
   const aliases =
   {

@@ -63,15 +63,6 @@ class App extends React.Component {
 
           {this.renderNavTop()}
 
-          <Bloomer.Hero isColor='info' isSize='small'>
-
-            <Bloomer.HeroHeader>
-              <Bloomer.Container hasTextAlign="centered">
-                <Bloomer.Title>Welcome</Bloomer.Title>
-              </Bloomer.Container>
-            </Bloomer.HeroHeader>
-
-            <Bloomer.HeroBody>
 
               <Bloomer.Columns>
 
@@ -94,13 +85,7 @@ class App extends React.Component {
               </Bloomer.Column>
 
               </Bloomer.Columns>
-            </Bloomer.HeroBody>
-
-            <Bloomer.HeroFooter>
-           
-              <div>nav bottom</div>
-            </Bloomer.HeroFooter>
-            </Bloomer.Hero >
+            
           </Bloomer.Container>
     );
 

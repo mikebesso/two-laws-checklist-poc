@@ -29,18 +29,18 @@ class ChecklistViewer extends React.Component {
 
     render(){
 
-        const key = this.props.hashRouter.location.options.id;
-        const { checklists, isLoaded } = this.props;
 
+        const { checklists, isLoaded, checklistId } = this.props;
 
+        
         if (!isLoaded.checklists){
             return(<div>loading</div>)
         }
         
-        const checklist = checklists[key];
+        const checklist = checklists[checklistId];
 
         if (!checklist){
-            return(<div>checklist {key} not found</div>)
+            return(<div>checklist {checklistId} not found</div>)
         }
 
 
@@ -56,21 +56,24 @@ class ChecklistViewer extends React.Component {
                 
                 {
                     checklist["tags"]
-                    ? <TagCloud tags={checklist.tags} />
+                    ? <fx.UI.TagCloud tags={checklist.tags} />
                     : null
                 }
 
 
-                <fx.UI.Tabs>
+                <fx.UI.TabSet>
                     <ChecklistNotes tabTitle="Notes" notes={checklist.notes}/>
                     <ChecklistOutlineViewer tabTitle="Outline" checklist={checklist}/>
                     <ChecklistStepperViewer tabTitle="Stepper" checklist={checklist}/>
-                </fx.UI.Tabs>
+                </fx.UI.TabSet>
 
             </div>
         )
-        
-        
+/*        
+        <ChecklistNotes tabTitle="Notes" notes={checklist.notes}/>
+        <ChecklistOutlineViewer tabTitle="Outline" checklist={checklist}/>
+        <ChecklistStepperViewer tabTitle="Stepper" checklist={checklist}/>
+  */      
     }
 }
 

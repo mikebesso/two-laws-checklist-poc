@@ -1,12 +1,14 @@
 import React from "react";
-import fx from "../../fx";
+import * as Bloomer from "bloomer";
+import _ from "lodash";
+
 
 
 class Tag extends  React.Component {
 
     render() {
         return(
-            <fx.UI.BS.Button className="btn btn-outline-info m-2 small">{this.props.tag}</fx.UI.BS.Button>
+            <Bloomer.Tag>{this.props.tag}</Bloomer.Tag>
         )
     }
 }
@@ -27,14 +29,14 @@ class TagCloud extends React.Component {
         console.log("TAG CLOUD", {tags: this.props.tags})
 
         return(
-            <div className = "d-flex flex-wrap bg-light" >
+            <Bloomer.Container >
                 {
-                    fx._.flatMap(
+                    _.flatMap(
                         this.props.tags,
                         (tag) => <Tag key={tag} tag={tag} />
                     )
                 }
-            </div>
+            </Bloomer.Container>
 
         )
 

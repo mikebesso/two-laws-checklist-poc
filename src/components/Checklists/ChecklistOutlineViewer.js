@@ -9,47 +9,45 @@ import fx from "../../fx";
 class ChecklistOutlineViewer extends React.Component {
 
     
-    renderSteps(steps){
+    renderSteps = (steps) => {
+        
         return(
-            <div>
-                <fx.UI.BS.ListGroup>
-                    {
-                        fx._.flatMap(steps, this.renderStep.bind(this))
-                    }
-                    
-                </fx.UI.BS.ListGroup>
+            <ul>
+                {
+                    fx._.flatMap(steps, this.renderStep)
+                }
+            </ul>
 
-            </div>
         )
     }
 
-    renderStep(d, i){
-
+    renderStep = (d, i) => {
         return(
-            <fx.UI.BS.ListGroupItem key={d.key} action>
-                <fx.UI.BS.Media>
-                    <fx.UI.BS.Media heading>{d.title}</fx.UI.BS.Media>
-                    <fx.UI.BS.Media body>
-                        {d.description}
-                    </fx.UI.BS.Media>
-                </fx.UI.BS.Media>
+            <li key={d.key}>
+                <fx.UI.MediaLeft>
+                    <fx.UI.Icon isSize="large" className="fs fa-thumbsup"/>
+                </fx.UI.MediaLeft>
+                <fx.UI.Media>
+                    <fx.UI.MediaContent>
+                        <div>{d.title}</div>
+                        <div>{d.description}</div>
+                    </fx.UI.MediaContent>
+                </fx.UI.Media>
                 
                 {fx._.has(d, "steps") ? this.renderSteps(d.steps) : null}
 
-            </fx.UI.BS.ListGroupItem>
+            </li>
         )
     }
 
 
-    render(){
+    render = () => {
 
         const { checklist } = this.props;
-
-
         return(
-            <div>
+            <fx.UI.Container>
                 {this.renderSteps(checklist.steps)}
-            </div>
+            </fx.UI.Container>
         )
 
         

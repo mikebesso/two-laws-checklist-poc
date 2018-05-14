@@ -11,6 +11,8 @@ import PageSignOut from "./PageSignOut";
 import PageSignUp from "./PageSignUp";
 import PageForgotPassword from "./PageForgotPassword";
 
+import PageScratch from "./PageScratch";
+
 const Pages = { 
     home: PageHome,
     user: PageUser,        
@@ -20,7 +22,8 @@ const Pages = {
     signIn: PageSignIn,
     signOut: PageSignOut,
     signUp: PageSignUp,
-    forgotPassword: PageForgotPassword
+    forgotPassword: PageForgotPassword,
+    scratch: PageScratch
 }
 
 

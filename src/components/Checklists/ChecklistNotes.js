@@ -11,16 +11,15 @@ class ChecklistNotes extends React.Component {
         console.log("Note render", note)
 
         return(
-            <fx.UI.BS.Card key={note.key} className="col w-25">
-                 <fx.UI.BS.CardBody>
-                     <fx.UI.BS.CardTitle>
+            
+            <fx.UI.Message key={note.key}>
+                <fx.UI.MessageHeader>
                         {note.title}    
-                    </fx.UI.BS.CardTitle>
-                    <fx.UI.BS.CardText>
-                        {note.body}    
-                    </fx.UI.BS.CardText>
-                </fx.UI.BS.CardBody>
-            </fx.UI.BS.Card>
+                </fx.UI.MessageHeader>
+                <fx.UI.MessageBody>
+                    {note.body}    
+                </fx.UI.MessageBody>
+            </fx.UI.Message>
         )
     }
 
@@ -29,11 +28,8 @@ class ChecklistNotes extends React.Component {
 
     render(){
 
-        return(<div>NOTES</div>)
-
-/*
         return(
-            <div className="container-fluid d-flex flex-wrap">
+            <fx.UI.Container>
             
                 {
                     fx._.flatMap(
@@ -41,9 +37,8 @@ class ChecklistNotes extends React.Component {
                         (note) => this.renderNote(note)
                     )
                 }
-            </div>
+            </fx.UI.Container>
         )
-*/
         
     }
 }

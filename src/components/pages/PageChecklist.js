@@ -16,12 +16,23 @@ class PageChecklist extends React.Component {
         return(href);
     }
 
+    renderContentsOrLoading = (key) => {
+        if (key){
+            return(<ChecklistViewer key={key}/>)
+        } else {
+            return(<fx.UI.Loading />)
+        }
+
+    }
+
     render(){
         
+        const checklistId = this.props.hashRouter.location.options.id;
+
         return(
-            <Bloomer.Container>
-                <ChecklistViewer />
-            </Bloomer.Container>
+            <fx.UI.Container>
+                <ChecklistViewer checklistId={checklistId} />
+            </fx.UI.Container>
         )
     }
 }
