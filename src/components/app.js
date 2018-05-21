@@ -1,7 +1,10 @@
 import React from 'react';
 import fx from "../fx";
 
-import Pages from "./pages";
+// The app must initialize the pages
+import "../components/pages";
+
+
 import Nav from "./Navigation";
 
 import * as Bloomer from "bloomer"
@@ -23,13 +26,10 @@ class App extends React.Component {
 
   renderPageRoutes = () => {
 
-    const map = Pages;
+    const map = fx.UI.Pages.Components();
 
-   
     return(
-      
       <fx.HashRouter.Switch map={map}  />
-
     )
     
   }

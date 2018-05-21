@@ -35,7 +35,7 @@ const handleHashChange = () => {
 
 const initializeFx = (actions, reducers, routes, aliases, firebaseConfig) => {
 
-   new fx.AppStore(actions, reducers);
+    new fx.AppStore(actions, reducers);
 
     new fx.HashRouter(routes, aliases);
     window.addEventListener('hashchange', handleHashChange, false);

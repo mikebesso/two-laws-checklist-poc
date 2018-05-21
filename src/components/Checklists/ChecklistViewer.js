@@ -11,7 +11,6 @@ import ChecklistStepperViewer from "./ChecklistStepperViewer";
 import ChecklistNotes from "./ChecklistNotes";
 
 
-import TagCloud from '../TagCloud';
 
 class ChecklistViewer extends React.Component {
 

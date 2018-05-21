@@ -3,7 +3,7 @@ import fx from "../../fx";
 import UserUI from "../UserUI";
 import {Navbar, NavbarBrand, NavbarBurger, NavbarStart, NavbarItem, NavbarLink, NavbarEnd, NavbarMenu, NavbarDropdown, NavbarDivider, Field, Control, Button, Icon} from "bloomer";
 
-import Pages from "../pages";
+import PageControlPanel from "../pages/PageControlPanel";
 
 
 //import UserUI from "../UserUI";
@@ -41,7 +41,7 @@ return(
               <NavbarItem hasDropdown isHoverable>
                   <NavbarLink href='#/documentation'>Documentation</NavbarLink>
                   <NavbarDropdown>
-                      <NavbarItem href={Pages.controlPanel.Href()}>Control Panel</NavbarItem>
+                      <NavbarItem href={PageControlPanel.Href()}>Control Panel</NavbarItem>
                       <NavbarItem href='#/'>Two B</NavbarItem>
                       <NavbarDivider />
                       <NavbarItem href='#/'>Two A</NavbarItem>

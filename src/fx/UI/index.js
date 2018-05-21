@@ -6,8 +6,10 @@ import MenuBar from "./MenuBar";
 import TabSet from "./TabSet";
 import Markdown from "./Markdown";
 import Stepper from "./Stepper";
-import Loading from "./Loading"
-import TagCloud from "./TagCloud"
+import Loading from "./Loading";
+import TagCloud from "./TagCloud";
+
+import * as Pages from "./Pages";
 
 
 
@@ -19,5 +21,6 @@ export default {
     Stepper,
     //BS,
     Loading,
-    TagCloud
+    TagCloud,
+    Pages
 }

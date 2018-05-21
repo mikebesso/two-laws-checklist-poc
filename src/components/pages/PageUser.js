@@ -1,3 +1,6 @@
+
+/*
+
 import React from "react";
 
 
@@ -39,26 +42,8 @@ class PageUser extends React.Component {
 }
 
 
-/*
-const mapStateToProps = (state) => (
-    {
-        isLoaded: state.isLoaded
-    } 
-);
 
-const mapDispatchToProps = dispatch => {
-    return(
-        bindActionCreators(
-            {
-                ...actions
-            },
-            dispatch
-        )
-    );
-}
-
-export default connect(mapStateToProps , mapDispatchToProps)(withRouter(PageUser));
-*/
 
 export default connect()(PageUser);
 
+*/

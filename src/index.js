@@ -46,7 +46,12 @@ import fx from "./fx";
     signUp: 'GET /signup',
     signOut: 'GET /signout',
     notFound: 'GET /notfound',
-    scratch: 'GET /scratch'
+    scratch: 'GET /scratch',
+
+    day: 'GET /cal/day/:offset',
+    week: 'GET /cal/week/:offset',
+    month: 'GET /cal/month/:offset'
+    
   }
   const aliases =
   {
@@ -54,7 +59,7 @@ import fx from "./fx";
   }  
 
 
-fx.initializeFx(actions, reducers, routes, aliases, firebaseConfig);
+fx.initializeFx(actions, reducers, fx.UI.Pages.Routes(), aliases, firebaseConfig);
 
 
 

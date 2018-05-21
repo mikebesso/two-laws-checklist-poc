@@ -12,7 +12,7 @@ import _ from "lodash";
 
 import icon from "../../img/arrow-alt-circle-right.svg";
 import fx from "../../fx";
-import Pages from "../pages";
+import PageChecklist from "../pages/PageChecklist";
 
 class ChecklistList extends React.Component {
 
@@ -28,7 +28,7 @@ class ChecklistList extends React.Component {
     renderItem(d, i){
         
         
-        const href = Pages.checklist.Href(d.key);
+        const href = PageChecklist.Href(d.key);
 
         return(
             <ListGroupItem key={d.key} onClick={() => this.NavigateToChecklist(d.key)}>
