@@ -5,7 +5,16 @@ import * as Bloomer from "bloomer"
 
 import FontAwesome from '../FontAwesome';
 
-class PageScratch extends React.Component {
+class Page extends React.Component {
+
+    static PageKey = "scratch";
+    static Location = () => ({name: Page.PageKey, options: {}});
+    static Href = (id) => fx.HashRouter.BuildHREF(Page.PageKey, {});
+    static Route = `/${Page.PageKey}`;
+    static RequiresAuthentication = true;
+  
+    static Title = "Scratch";
+  
 
     render() {
 
@@ -62,4 +71,6 @@ class PageScratch extends React.Component {
 
 
 
-export default fx.AppStore.Connect()(PageScratch);
+const ConnectedPage = fx.AppStore.Connect()(Page);
+fx.UI.Pages.add(Page, ConnectedPage);
+export default ConnectedPage;

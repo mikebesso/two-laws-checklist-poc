@@ -5,8 +5,13 @@ import * as Bloomer from "bloomer"
 
 import FontAwesome from '../FontAwesome';
 
-class PageUnderConstruction extends React.Component {
+class Page extends React.Component {
 
+    static PageKey = "underConstruction";
+    static Location = () => ({name: Page.PageKey, options: {}});
+    static Href = (id) => fx.HashRouter.BuildHREF(Page.PageKey, {});
+    static Route = `/${Page.PageKey}`;
+    static RequiresAuthentication = false;
 
     render = () => {
         
@@ -22,4 +27,6 @@ class PageUnderConstruction extends React.Component {
 
 
 
-export default fx.AppStore.Connect()(PageUnderConstruction);
+const ConnectedPage = fx.AppStore.Connect()(Page);
+fx.UI.Pages.add(Page, ConnectedPage);
+export default ConnectedPage;

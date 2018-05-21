@@ -6,15 +6,13 @@ import * as Bloomer from "bloomer";
 
 
 
-class PageChecklist extends React.Component {
+class Page extends React.Component {
 
-    static Location = (id) => {
-        return("checklist", {id})
-    }
-    static Href = (id) => {
-        const href = fx.HashRouter.BuildHREF("checklist", {id}) ;
-        return(href);
-    }
+    static PageKey = "checklist";
+    static Location = (id) => ({name: Page.PageKey, options: {id:id}});
+    static Href = (id) => fx.HashRouter.BuildHREF(Page.PageKey, {id});
+    static Route = '/checklist/:id';
+    static RequiresAuthentication = true;
 
     renderContentsOrLoading = (key) => {
         if (key){
@@ -37,4 +35,11 @@ class PageChecklist extends React.Component {
     }
 }
 
-export default fx.AppStore.Connect()(PageChecklist);
+
+
+
+const ConnectedPage = fx.AppStore.Connect()(Page);
+fx.UI.Pages.add(Page, ConnectedPage);
+export default ConnectedPage;
+
+

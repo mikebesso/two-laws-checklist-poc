@@ -4,24 +4,36 @@ import _ from "lodash";
 let PageList = {};
 
 
-export const add = (pageKey, pageComponent, pageRoute, pageRequiresAuth = false) => {
+export const add = (pageClass, connectedPage) => {
     
-    PageList[pageKey] = {pageComponent, pageRoute, pageRequiresAuth};
+    PageList[pageClass.PageKey] = {
+        pageComponent: connectedPage, 
+        pageClass,  
+        pageRoute: `GET ${pageClass.Route}`, 
+        pageRequiresAuth: pageClass.RequiresAuthentication
+    };
 
 }
 
-export const Components = () => {
+export const RouteMap = () => {
 
     const map = _.mapValues(PageList, (element) => element.pageComponent)
+
+    debugger
     return (map)
  };
 
 export const Routes = () => {
 
+    debugger
     const map = _.mapValues(PageList, (element) => element.pageRoute)
     return (map) 
 
 } 
 
-
+export const PageClass = () => {
+    const map = _.mapValues(PageList, (element) => element.pageClass)
+    return (map) 
+    
+}
 

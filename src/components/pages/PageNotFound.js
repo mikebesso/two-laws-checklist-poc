@@ -5,8 +5,15 @@ import * as Bloomer from "bloomer"
 
 import FontAwesome from '../FontAwesome';
 
-class PageNotFound extends React.Component {
+class Page extends React.Component {
 
+    static PageKey = "notFound";
+    static Location = () => ({name: Page.PageKey, options: {}});
+    static Href = (id) => fx.HashRouter.BuildHREF(Page.PageKey, {});
+    static Route = `/${Page.PageKey}`;
+    static RequiresAuthentication = true;
+  
+    static Title = "Not Found";    
 
     render = () => {
         
@@ -22,4 +29,6 @@ class PageNotFound extends React.Component {
 
 
 
-export default fx.AppStore.Connect()(PageNotFound);
+const ConnectedPage = fx.AppStore.Connect()(Page);
+fx.UI.Pages.add(Page, ConnectedPage);
+export default ConnectedPage;

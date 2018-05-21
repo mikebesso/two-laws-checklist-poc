@@ -7,7 +7,7 @@ import PageChecklists from './PageChecklists';
 import PageControlPanel from './PageControlPanel';
 import PageSignIn from "./PageSignIn";
 import PageSignOut from "./PageSignOut";
-import PageSignUp from "./PageSignUp";
+//import PageSignUp from "./PageSignUp";
 import PageForgotPassword from "./PageForgotPassword";
 import PageScratch from "./PageScratch";
 import PageUnderConstruction from "./PageUnderConstruction";
@@ -17,8 +17,9 @@ import PageNotFound from "./PageNotFound";
 
 
 
-fx.UI.Pages.add("home", PageHome, 'GET /', false);
-fx.UI.Pages.add("user", PageUser, 'GET /user', true);
+//fx.UI.Pages.add("home", PageHome, 'GET /', false);
+//fx.UI.Pages.add("homeTech", PageHome, 'GET /home/tech', false);
+/*
 fx.UI.Pages.add("checklist", PageChecklist, 'GET /checklist/:id', true);
 fx.UI.Pages.add("checklists", PageChecklists,  'GET /checklists', true);
 fx.UI.Pages.add("controlPanel", PageControlPanel,  'GET /controlpanel', true);
@@ -34,6 +35,6 @@ fx.UI.Pages.add("month", PageUnderConstruction, 'GET /cal/month/:offset', false)
 fx.UI.Pages.add("notFound", PageNotFound, 'GET /notfound', false);
 fx.UI.Pages.add("underConstruction", PageUnderConstruction, 'GET /underconstruction', false);
 
-
+*/
 
 

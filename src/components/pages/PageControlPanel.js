@@ -6,15 +6,14 @@ import fx from "../../fx";
 //import FontAwesome, {icons} from '../FontAwesome'
 
 
-class PageControlPanel extends React.Component {
+class Page extends React.Component {
 
-    static Location = () => {
-        return("controlPanel", {})
-    }
-    static Href = () => {
-        const href = fx.HashRouter.BuildHREF("controlPanel");
-        return(href);
-    }
+    static PageKey = "controlPanel";
+    static Location = () => ({name: Page.PageKey, options: {}});
+    static Href = (id) => fx.HashRouter.BuildHREF(Page.PageKey, {});
+    static Route = `/${Page.PageKey}`;
+    static RequiresAuthentication = true;
+
 
     render() {
         return (
@@ -41,7 +40,9 @@ const mapStateToProps = (state) => (
 
 
 
-export default fx.AppStore.Connect(mapStateToProps)(PageControlPanel);
+const ConnectedPage = fx.AppStore.Connect()(Page);
+fx.UI.Pages.add(Page, ConnectedPage);
+export default ConnectedPage;
 
 
 

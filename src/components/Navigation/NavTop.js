@@ -25,13 +25,13 @@ return(
       >
       <NavbarBrand>
           <NavbarItem>
-              <img src="/pathtoimg" style={{ marginRight: 5 }} alt=""/> Bloomer
+            <fx.UI.IconBrand icon="facebook" size={2} />
           </NavbarItem>
           <NavbarItem isHidden='desktop'>
-              <Icon className='fa fa-github' />
+              <fx.UI.IconBrand icon="github" size={2} />
           </NavbarItem>
           <NavbarItem isHidden='desktop'>
-              <Icon className='fa fa-twitter' style={{ color: '#55acee' }} />
+              <fx.UI.IconBrand icon="twitter"  size={2} />
           </NavbarItem>
           <NavbarBurger isActive={true} onClick={this.onClickNav} />
       </NavbarBrand>
@@ -49,23 +49,14 @@ return(
               </NavbarItem>
           </NavbarStart>
           <NavbarEnd>
-              <NavbarItem href="https://github.com/AlgusDark/bloomer" isHidden='touch'>
-                  <Icon className='fa fa-github' />
-              </NavbarItem>
-              <NavbarItem href="https://twitter.com/AlgusDark" isHidden='touch'>
-                  <Icon className='fa fa-twitter' style={{ color: '#55acee' }} />
+              <NavbarItem href="https://github.com/mikebesso" isHidden='touch'>
+                <fx.UI.IconBrand icon="github" size={2} />
               </NavbarItem>
               <NavbarItem>
-                  <Field isGrouped>
-                      <Control>
-                          <Button id="twitter" data-social-network="Twitter" data-social-action="tweet"
-                          data-social-target="http://bloomer.js.org" target="_blank" href="https://twitter.com/intent/tweet?text=bloomer:
-                          a set of React Stateless Components for bulma.io&amp;url=http://bloomer.js.org&amp;via=AlgusDark">
-                              <Icon className="fa fa-twitter" />
-                              <span>Tweet</span>
-                          </Button>
-                      </Control>
-                  </Field>
+                <fx.UI.LinkedinShareButton />
+              </NavbarItem>
+              <NavbarItem>
+                  <fx.UI.TwitterShareButton />
               </NavbarItem>
               <UserUI.NavbarUser />
           </NavbarEnd>

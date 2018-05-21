@@ -10,30 +10,32 @@ import HeroHome from "./HeroHome"
 
 class Page extends React.Component {
 
-
-    static PageKey = "home";
+    static PageKey = "homeTech";
     static Location = () => ({name: Page.PageKey, options: {}});
     static Href = (id) => fx.HashRouter.BuildHREF(Page.PageKey, {});
     static Route = `/${Page.PageKey}`;
     static RequiresAuthentication = true;
 
-    static Title = "Home";  
+     
+    static Title = "Tech";  
 
+    static Location = () => {
+        return("/home/tech", {})
+    }
+    static Href = () => {
+        const href = fx.HashRouter.BuildHREF("homeTech");
+        return(href);
+    }
 
-
-  render() {
+    render() {
 
      return (
 
-        <main className = "page-home">
+        <main className = "page-home-tech">
 
-            <HeroHome pageClass={Page}/>
-
-
+            <HeroHome pageClass={Page} />
 
             <a href={fx.HashRouter.BuildHREF("checklists")}>Start Here</a>
-
-
 
             <ul>
                 <li>
@@ -51,18 +53,6 @@ class Page extends React.Component {
 }
 
 
-
-
 const ConnectedPage = fx.AppStore.Connect()(Page);
 fx.UI.Pages.add(Page, ConnectedPage);
 export default ConnectedPage;
-
-/*
-        <section>
-            <h1>
-                Welcome to my Checklist App Proof of Concept
-            </h1>
-             <Link to = "/checklists">Start Here</Link>
-        </section>
-
-*/

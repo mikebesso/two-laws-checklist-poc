@@ -6,20 +6,18 @@ import * as Bloomer from "bloomer";
 import SignInWithEmail from "../UserUI/SignIn/SignInWithEmail";
 
 
-class PageSignIn extends React.Component {
+class Page extends React.Component {
 
-    static Location = () => {
-        return("signIn", {})
-    }
-    static Href = () => {
-        const href = fx.HashRouter.BuildHREF("signIn");
-        return(href);
-    }
+  static PageKey = "signIn";
+  static Location = () => ({name: Page.PageKey, options: {}});
+  static Href = (id) => fx.HashRouter.BuildHREF(Page.PageKey, {});
+  static Route = `/${Page.PageKey}`;
+  static RequiresAuthentication = true;
 
+  static Title = "Sign In";
 
     render = () => {
     
-      
         return(
         (!this.props.firebase.authenticated )
         ?
@@ -77,6 +75,9 @@ const mapStateToProps = (state) => (
   
   
   
-export default fx.AppStore.Connect(mapStateToProps)(PageSignIn);
+  const ConnectedPage = fx.AppStore.Connect()(Page);
+  fx.UI.Pages.add(Page, ConnectedPage);
+  export default ConnectedPage;
+  
   
   

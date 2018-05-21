@@ -3,15 +3,15 @@ import fx from "../../fx";
 
 import * as Bloomer from "bloomer";
 
-class PageSignOut extends React.Component {
+class Page extends React.Component {
 
-    static Location = () => {
-        return("signOut", {})
-    }
-    static Href = () => {
-        const href = fx.HashRouter.BuildHREF("signOut");
-        return(href);
-    }
+    static PageKey = "signOut";
+    static Location = () => ({name: Page.PageKey, options: {}});
+    static Href = (id) => fx.HashRouter.BuildHREF(Page.PageKey, {});
+    static Route = `/${Page.PageKey}`;
+    static RequiresAuthentication = false;
+
+    static Title = "Sign Out";
 
     SignOut = () => {
         fx.Firebase.SignOut()
@@ -39,6 +39,9 @@ const mapStateToProps = (state) => (
   
   
   
-export default fx.AppStore.Connect(mapStateToProps)(PageSignOut);
+  const ConnectedPage = fx.AppStore.Connect()(Page);
+  fx.UI.Pages.add(Page, ConnectedPage);
+  export default ConnectedPage;
+  
   
   

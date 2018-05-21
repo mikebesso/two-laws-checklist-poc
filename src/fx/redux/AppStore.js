@@ -114,12 +114,10 @@ class AppStore {
         return(
             (Component) => {
                 return(    
-                    
                     connect(
                         mapStateToProps,
                         (dispatch) => redux.bindActionCreators({...AppStore.actions}, dispatch) 
                     )(Component)
-
                 )
             }
         ) 

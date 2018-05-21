@@ -26,7 +26,7 @@ class App extends React.Component {
 
   renderPageRoutes = () => {
 
-    const map = fx.UI.Pages.Components();
+    const map = fx.UI.Pages.RouteMap();
 
     return(
       <fx.HashRouter.Switch map={map}  />

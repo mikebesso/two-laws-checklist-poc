@@ -5,9 +5,14 @@ import fx from "../../fx";
 import ChecklistList from '../Checklists/ChecklistList';
 
 
+class Page extends React.Component {
 
+    static PageKey = "checklists";
+    static Location = () => ({name: Page.PageKey, options: {}});
+    static Href = (id) => fx.HashRouter.BuildHREF(Page.PageKey, {});
+    static Route = `/${Page.PageKey}`;
+    static RequiresAuthentication = true;
 
-class PageChecklists extends React.Component {
 
     render(){
         return(
@@ -20,4 +25,6 @@ class PageChecklists extends React.Component {
     }
 }
 
-export default fx.AppStore.Connect()(PageChecklists);
+const ConnectedPage = fx.AppStore.Connect()(Page);
+fx.UI.Pages.add(Page, ConnectedPage);
+export default ConnectedPage;
