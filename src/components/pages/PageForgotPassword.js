@@ -15,13 +15,6 @@ class Page extends React.Component {
 
 
 
-const mapStateToProps = (state) => (
-    {
-    } 
-);
-
-
-
 const ConnectedPage = fx.AppStore.Connect()(Page);
 fx.UI.Pages.add(Page, ConnectedPage);
 export default ConnectedPage;

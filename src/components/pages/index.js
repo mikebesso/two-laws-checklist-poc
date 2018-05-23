@@ -1,4 +1,3 @@
-import fx from "../../fx";
 
 import PageHome from "./PageHome";
 import PageUser from "./PageUser"
@@ -14,7 +13,19 @@ import PageUnderConstruction from "./PageUnderConstruction";
 import PageNotFound from "./PageNotFound";
 
 
-
+export default {
+    PageHome,
+    PageUser,
+    PageChecklist,
+    PageChecklists,
+    PageControlPanel,
+    PageSignIn,
+    PageSignOut,
+    PageForgotPassword,
+    PageScratch,
+    PageUnderConstruction,
+    PageNotFound
+}
 
 
 //fx.UI.Pages.add("home", PageHome, 'GET /', false);

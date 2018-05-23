@@ -5,7 +5,8 @@ const types =
     ATTACHED_ON_AUTH_STATE_CHANGE: "ATTACHED_ON_AUTH_STATE_CHANGE",
     ON_AUTH_STATE_CHANGE: "ON_AUTH_STATE_CHANGE",
     SIGN_IN: "SIGN_IN",
-    SIGN_UP: "SIGN_UP"
+    SIGN_UP: "SIGN_UP",
+    SIGN_OUT: "SIGN_OUT"
 }
 
 export default types;

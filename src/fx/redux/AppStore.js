@@ -18,7 +18,7 @@ import { logger } from 'redux-logger';
 
 import hashRouterReducers from "../hashRouter/reducers";
 
-import _ from "lodash";
+//import _ from "lodash";
 import hashRouterActions from '../hashRouter/actions/hashRouterActions';
 
 import firebaseReducers from "../firebase/reducers";

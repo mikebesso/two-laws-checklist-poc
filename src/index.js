@@ -36,30 +36,8 @@ import fx from "./fx";
 // https://fontawesome.com/how-to-use/js-component-packages#
 
 
-  const routes =
-  { 
-    home: 'GET /',
-    checklists: 'GET /checklists',
-    checklist: 'GET /checklist/:id',
-    controlPanel: 'GET /controlpanel',
-    signIn: 'GET /signin',
-    signUp: 'GET /signup',
-    signOut: 'GET /signout',
-    notFound: 'GET /notfound',
-    scratch: 'GET /scratch',
 
-    day: 'GET /cal/day/:offset',
-    week: 'GET /cal/week/:offset',
-    month: 'GET /cal/month/:offset'
-    
-  }
-  const aliases =
-  {
-    'GET /': 'home'
-  }  
-
-
-fx.initializeFx(actions, reducers, fx.UI.Pages.Routes(), aliases, firebaseConfig);
+fx.initializeFx(actions, reducers, fx.UI.Pages.Routes(), firebaseConfig);
 
 
 

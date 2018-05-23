@@ -11,7 +11,11 @@ const initialState =
 
 const firebaseReducer = (state = initialState, action) => {
 
+
     switch (action.type) {
+        
+        case types.SIGN_OUT:
+            return(initialState);
 
         case types.ON_AUTH_STATE_CHANGE:
         

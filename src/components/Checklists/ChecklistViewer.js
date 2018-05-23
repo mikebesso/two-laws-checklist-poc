@@ -14,9 +14,6 @@ import ChecklistNotes from "./ChecklistNotes";
 
 class ChecklistViewer extends React.Component {
 
-    constructor(props){
-        super(props);
-    }
 
 
     componentDidMount() {

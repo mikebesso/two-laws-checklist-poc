@@ -33,11 +33,11 @@ const handleHashChange = () => {
     AppStore.Dispatch(fx.HashRouter.Actions.handleHashChange())
 }
 
-const initializeFx = (actions, reducers, routes, aliases, firebaseConfig) => {
+const initializeFx = (actions, reducers, routes, firebaseConfig) => {
 
     new fx.AppStore(actions, reducers);
 
-    new fx.HashRouter(routes, aliases);
+    new fx.HashRouter(routes);
     window.addEventListener('hashchange', handleHashChange, false);
     
     // Set the initial route and render the app
@@ -66,7 +66,11 @@ const fx = {
     HashRouter,
 
     initializeFx,
-    Firebase
+    Firebase,
+
+    actionTypes: {
+        ...Firebase.actionTypes
+    }
    
 
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import fx from "../../fx";
 import UserUI from "../UserUI";
-import {Navbar, NavbarBrand, NavbarBurger, NavbarStart, NavbarItem, NavbarLink, NavbarEnd, NavbarMenu, NavbarDropdown, NavbarDivider, Field, Control, Button, Icon} from "bloomer";
+import {Navbar, NavbarBrand, NavbarBurger, NavbarStart, NavbarItem, NavbarLink, NavbarEnd, NavbarMenu, NavbarDropdown, NavbarDivider} from "bloomer";
 
 import PageControlPanel from "../pages/PageControlPanel";
 
@@ -17,7 +17,7 @@ import "bulma/css/bulma.css"
 
     render(){
 
-      const props = this.props;
+      
 
 return(
       <Navbar 
@@ -63,18 +63,7 @@ return(
       </NavbarMenu>
       </Navbar>
 )
-      /*
-      return(
-        <fx.UI.MenuBar>
-          <fx.UI.BS.NavItem>
-            <fx.UI.BS.NavLink  href={fx.HashRouter.BuildHREF("controlPanel")}>Control Panel</fx.UI.BS.NavLink>
-          </fx.UI.BS.NavItem>
-          <fx.UI.BS.NavItem>
-            <UserUI.component.UserButton />
-          </fx.UI.BS.NavItem>
-        </fx.UI.MenuBar>
-       
-      ) */
+
     }
   }
 

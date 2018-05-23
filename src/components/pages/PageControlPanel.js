@@ -19,9 +19,9 @@ class Page extends React.Component {
         return (
             <main className = "page-control-panel holygrail-main col-12 container">
 
-                <fx.UI.BS.Button onClick={() => {this.props.reinitializeChecklists()}}>Reinitialize</fx.UI.BS.Button>
+                <fx.UI.Button onClick={() => {this.props.reinitializeChecklists()}}>Reinitialize</fx.UI.Button>
 
-                <fx.UI.BS.NavLink href="https://console.firebase.google.com" target="firebase">Firebase</fx.UI.BS.NavLink>
+                <a href="https://console.firebase.google.com" target="firebase">Firebase</a>
 
             </main>
 
@@ -35,12 +35,13 @@ class Page extends React.Component {
 
 const mapStateToProps = (state) => (
     {
+        firebase: state.firebase
     } 
 );
 
 
 
-const ConnectedPage = fx.AppStore.Connect()(Page);
+const ConnectedPage = fx.AppStore.Connect(mapStateToProps)(Page);
 fx.UI.Pages.add(Page, ConnectedPage);
 export default ConnectedPage;
 

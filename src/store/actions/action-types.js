@@ -1,4 +1,4 @@
-
+import fx from "../../fx";
 
 const actionTypes = {
     LOAD_CHECKLISTS: "LOAD_CHECKLISTS",
@@ -18,7 +18,8 @@ const actionTypes = {
 
     UPDATE_PROFILE: "UPDATE_PROFILE",
 
-    STORE_INITIALIZED: "STORE_INITIALIZED"
+    STORE_INITIALIZED: "STORE_INITIALIZED",
+    ...fx.actionTypes
 
 };
 

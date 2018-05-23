@@ -2,7 +2,7 @@
 
 import * as Bloomer from "bloomer";
 
-import MenuBar from "./MenuBar";
+//import MenuBar from "./MenuBar";
 import TabSet from "./TabSet";
 import Markdown from "./Markdown";
 import Stepper from "./Stepper";

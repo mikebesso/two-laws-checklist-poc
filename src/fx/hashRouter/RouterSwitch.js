@@ -12,7 +12,7 @@ class RouteNotFound extends React.Component{
         }
         return(
             <div>
-                text
+                {text}
             </div>
         )
     }

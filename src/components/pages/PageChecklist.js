@@ -2,7 +2,7 @@ import React from "react";
 import fx from "../../fx";
 
 import ChecklistViewer from '../Checklists/ChecklistViewer';
-import * as Bloomer from "bloomer";
+
 
 
 

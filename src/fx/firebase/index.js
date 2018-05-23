@@ -8,24 +8,25 @@ export default class Firebase {
     static actionTypes = actionTypes
 
     static handleOnAuthStateChanged = (user) => {
-        let payload = {
-            authenticated: false,
-            name: "anonymous",
-            email: ""            
-        }
+
         
-        if (user){
-            user = {
+        const payload = user ? 
+            {
                 authenticated: true,
                 name: user.displayName,
                 email: user.email
-                
+            } 
+            :
+            {
+                authenticated: false,
+                name: "anonymous",
+                email: ""            
             }
-        }
+
         AppStore.Dispatch(
             {
                 type: actionTypes.ON_AUTH_STATE_CHANGE,
-                payload: user
+                payload: payload
             }
         )
     }
@@ -44,8 +45,21 @@ export default class Firebase {
     }
     
     static SignOut = () => {
-        firebase.auth().signOut()
-        HashRouter.NavigateTo("home");
+        firebase.auth().signOut().then(
+            () => {
+                AppStore.Dispatch(
+                    {
+                        type: actionTypes.SIGN_OUT,
+                        payload: null
+                    }
+                );
+                HashRouter.NavigateTo("home");
+            },
+            () => console.log("signOut() failed")
+        
+        );
+
+       
                 
     }
     
@@ -65,6 +79,11 @@ export default class Firebase {
     
     }
 
+
+    static get CurrentUser(){
+        return firebase.auth().currentUser;
+    }
+
     constructor(firebaseConfig){
         
 
@@ -72,6 +91,9 @@ export default class Firebase {
         firebase.auth().onAuthStateChanged(Firebase.handleOnAuthStateChanged);
 
     }
+
+
+
 
 
 

@@ -18,14 +18,11 @@ export const add = (pageClass, connectedPage) => {
 export const RouteMap = () => {
 
     const map = _.mapValues(PageList, (element) => element.pageComponent)
-
-    debugger
     return (map)
  };
 
 export const Routes = () => {
 
-    debugger
     const map = _.mapValues(PageList, (element) => element.pageRoute)
     return (map) 
 

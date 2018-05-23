@@ -9,11 +9,15 @@ class HeroHome extends React.Component
 {
 
 
+    renderTodayTab = () => {
+        if (this.props.firebase.authenticated) {
+            return(<fx.UI.Tab><fx.UI.TabLink>Today</fx.UI.TabLink></fx.UI.Tab>)
+        }
+    }
+
     render = () => {
 
-
         const currentPageName = this.props.pageClass.Name;
-        debugger        
 
         return(
             <fx.UI.Hero isColor='info' isSize='small'>
@@ -37,7 +41,7 @@ class HeroHome extends React.Component
                                 <fx.UI.Tab isActive={currentPageName===PageHome.Name}>
                                     <fx.UI.TabLink href={PageHome.Href()}>Overview</fx.UI.TabLink>
                                 </fx.UI.Tab>
-                                <fx.UI.Tab><fx.UI.TabLink>Grid</fx.UI.TabLink></fx.UI.Tab>
+                                {this.renderTodayTab()}
                                 <fx.UI.Tab><fx.UI.TabLink>Element</fx.UI.TabLink></fx.UI.Tab>
                                 <fx.UI.Tab><fx.UI.TabLink>Components</fx.UI.TabLink></fx.UI.Tab>
                                 <fx.UI.Tab isActive={currentPageName===PageHomeTech.Name}><fx.UI.TabLink href={PageHomeTech.Href()}>Technologies</fx.UI.TabLink></fx.UI.Tab>
@@ -51,5 +55,10 @@ class HeroHome extends React.Component
     }
 }
 
-
-export default fx.AppStore.Connect()(HeroHome);
+const mapStateToProps = (state) => (
+    {
+        firebase: state.firebase
+    } 
+  );
+  
+export default fx.AppStore.Connect(mapStateToProps)(HeroHome);

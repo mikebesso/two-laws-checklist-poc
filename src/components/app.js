@@ -7,7 +7,6 @@ import "../components/pages";
 
 import Nav from "./Navigation";
 
-import * as Bloomer from "bloomer"
 
 
 class App extends React.Component {
@@ -24,70 +23,26 @@ class App extends React.Component {
     //this.props.reinitializeChecklists();
   }
 
-  renderPageRoutes = () => {
 
-    const map = fx.UI.Pages.RouteMap();
+    render() {
+      return (
+        <fx.UI.Container>
 
-    return(
-      <fx.HashRouter.Switch map={map}  />
-    )
-    
-  }
-
-  renderNavLeft = () => {
-    return(
-      <div className="col-md-2 fixed">
-        <Nav.Left />
-      </div>
-    )
-  }
-
-  renderNavBottom = () => {
-    return(
-      <footer >
-        <Nav.Bottom />
-      </footer>
-    )
-  }
-
-  renderNavTop = () =>  {
-    //return (<div></div>)
-    return(
-      <Nav.Top id="topNav" />
-    )
-  }
-
-  render() {
-    return (
-      <Bloomer.Container>
-
-          {this.renderNavTop()}
+            <Nav.Top id="topNav" />
 
 
-              <Bloomer.Columns>
+            <fx.UI.Columns>
 
-                <Bloomer.Column isSize={2}>
-                  {this.renderNavLeft()}
-                </Bloomer.Column>
-
-
-              <Bloomer.Column isSize={8}>
-                {this.renderPageRoutes()}
-              </Bloomer.Column>
+              <fx.UI.Column isSize={12}>
+                <fx.HashRouter.Switch map={fx.UI.Pages.RouteMap()}  />
+              </fx.UI.Column>
 
 
-              <Bloomer.Column isSize={2}>
-                          
-                  <section className="text-center bg-secondary">
-                      <h2>Aside</h2>
-                      <p className="lead">the right side will show context sensitive tips and help</p>
-                  </section>
-              </Bloomer.Column>
 
-              </Bloomer.Columns>
-            
-          </Bloomer.Container>
-    );
+            </fx.UI.Columns>
+              
+            </fx.UI.Container>
+      );
 
   }
 }

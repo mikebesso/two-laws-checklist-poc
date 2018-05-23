@@ -23,31 +23,29 @@ class Page extends React.Component {
 
   render() {
 
-     return (
+        console.log("CURRENT USER", fx.Firebase.CurrentUser);
 
-        <main className = "page-home">
+        return (
 
-            <HeroHome pageClass={Page}/>
+            <main className = "page-home">
 
+                <HeroHome pageClass={Page}/>
 
+                <a href={fx.HashRouter.BuildHREF("checklists")}>Start Here</a>
 
-            <a href={fx.HashRouter.BuildHREF("checklists")}>Start Here</a>
-
-
-
-            <ul>
-                <li>
-                    Check out FireBase from google
-                </li>
-            </ul>
+                <ul>
+                    <li>
+                        Check out FireBase from google
+                    </li>
+                </ul>
 
 
-        </main>
+            </main>
 
-    )
+        )
 
     
-  }
+    }
 }
 
 

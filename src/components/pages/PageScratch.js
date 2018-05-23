@@ -3,7 +3,7 @@ import fx from "../../fx";
 import * as Bloomer from "bloomer"
 
 
-import FontAwesome from '../FontAwesome';
+
 
 class Page extends React.Component {
 
