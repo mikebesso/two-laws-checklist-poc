@@ -72,5 +72,5 @@ class Page extends React.Component {
 
 
 const ConnectedPage = fx.AppStore.Connect()(Page);
-fx.UI.Pages.add(Page, ConnectedPage);
+fx.UI.AddPage(Page, ConnectedPage);
 export default ConnectedPage;

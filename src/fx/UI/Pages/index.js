@@ -1,20 +1,24 @@
 import _ from "lodash";
 
 
-let PageList = {};
+export let Pages = {};
 
 
-export const add = (pageClass, connectedPage) => {
+export const AddPage = (pageClass, connectedPage) => {
     
-    PageList[pageClass.PageKey] = {
+    Pages[pageClass.PageKey] = {
         pageComponent: connectedPage, 
         pageClass,  
         pageRoute: `GET ${pageClass.Route}`, 
-        pageRequiresAuth: pageClass.RequiresAuthentication
+        pageRequiresAuth: pageClass.RequiresAuthentication,
+        pageLocation: pageClass.Location
+
     };
+
 
 }
 
+/*
 export const RouteMap = () => {
 
     const map = _.mapValues(PageList, (element) => element.pageComponent)
@@ -31,6 +35,13 @@ export const Routes = () => {
 export const PageClass = () => {
     const map = _.mapValues(PageList, (element) => element.pageClass)
     return (map) 
-    
 }
+
+export const PageLocation = () => {
+    const map = _.mapValues(PageList, (element) => element.pageLocation)
+    return (map) 
+}
+*/
+
+
 

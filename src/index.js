@@ -37,7 +37,7 @@ import fx from "./fx";
 
 
 
-fx.initializeFx(actions, reducers, fx.UI.Pages.Routes(), firebaseConfig);
+fx.initializeFx(actions, reducers, firebaseConfig);
 
 
 

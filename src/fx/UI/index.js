@@ -3,7 +3,10 @@
 import * as Bloomer from "bloomer";
 
 //import MenuBar from "./MenuBar";
-import TabSet from "./TabSet";
+import Tabs from "./Tabs";
+import Windows from "./Windows";
+import Timers from "./Timers";
+
 import Markdown from "./Markdown";
 import Stepper from "./Stepper";
 import Loading from "./Loading";
@@ -14,16 +17,25 @@ import * as Pages from "./Pages";
 
 import * as ShareButtons from "./ShareButtons";
 
-export default {
+
+
+const components = {
     ...Bloomer,
     ...Icons,
     ...ShareButtons,
+    ...Tabs,
+    ...Windows,
+    ...Timers,
     //MenuBar,
-    TabSet,
     Markdown,
     Stepper,
     //BS,
     Loading,
     TagCloud,
-    Pages
-}
+    ...Pages
+};
+
+
+console.log(components)
+
+export default components;

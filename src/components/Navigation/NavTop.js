@@ -49,15 +49,6 @@ return(
               </NavbarItem>
           </NavbarStart>
           <NavbarEnd>
-              <NavbarItem href="https://github.com/mikebesso" isHidden='touch'>
-                <fx.UI.IconBrand icon="github" size={2} />
-              </NavbarItem>
-              <NavbarItem>
-                <fx.UI.LinkedinShareButton />
-              </NavbarItem>
-              <NavbarItem>
-                  <fx.UI.TwitterShareButton />
-              </NavbarItem>
               <UserUI.NavbarUser />
           </NavbarEnd>
       </NavbarMenu>

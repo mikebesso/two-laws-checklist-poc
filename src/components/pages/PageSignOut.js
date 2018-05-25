@@ -40,7 +40,7 @@ const mapStateToProps = (state) => (
   
   
   const ConnectedPage = fx.AppStore.Connect(mapStateToProps)(Page);
-  fx.UI.Pages.add(Page, ConnectedPage);
+  fx.UI.AddPage(Page, ConnectedPage);
   export default ConnectedPage;
   
   

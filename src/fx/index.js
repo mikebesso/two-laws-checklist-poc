@@ -15,7 +15,6 @@ import HashRouter from "./hashRouter/HashRouter";
 import Firebase from "./firebase";
 
 
-
 yup.match = function (key, message, func) {
     message = message || 'Values do not match';
     func = func || function (value) {
@@ -33,7 +32,12 @@ const handleHashChange = () => {
     AppStore.Dispatch(fx.HashRouter.Actions.handleHashChange())
 }
 
-const initializeFx = (actions, reducers, routes, firebaseConfig) => {
+const initializeFx = (actions, reducers, firebaseConfig) => {
+
+    const {Pages} = UI;
+    const routes = _.mapValues(Pages, (element) => element.pageRoute)
+
+    
 
     new fx.AppStore(actions, reducers);
 

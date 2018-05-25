@@ -25,23 +25,28 @@ class App extends React.Component {
 
 
     render() {
+
+      const RouteMap = fx._.mapValues(fx.UI.Pages, (element) => element.pageComponent);
+
       return (
-        <fx.UI.Container>
+        <fx.UI.IdleTimer idleAction={fx.Firebase.SignOut}>
+          <fx.UI.Container>
 
-            <Nav.Top id="topNav" />
-
-
-            <fx.UI.Columns>
-
-              <fx.UI.Column isSize={12}>
-                <fx.HashRouter.Switch map={fx.UI.Pages.RouteMap()}  />
-              </fx.UI.Column>
+              <Nav.Top id="topNav" />
 
 
+              <fx.UI.Columns>
 
-            </fx.UI.Columns>
-              
-            </fx.UI.Container>
+                <fx.UI.Column isSize={12}>
+                  <fx.HashRouter.Switch map={RouteMap}  />
+                </fx.UI.Column>
+
+              </fx.UI.Columns>
+                
+              <Nav.Bottom />
+
+          </fx.UI.Container>
+        </fx.UI.IdleTimer>
       );
 
   }
@@ -51,6 +56,7 @@ class App extends React.Component {
 
 const mapStateToProps = (state) => (
     {
+        firebase: state.firebase,
         checklists: state.checklists,
         user: state.user,
         isLoaded: state.isLoaded,

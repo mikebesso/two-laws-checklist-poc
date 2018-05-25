@@ -4,10 +4,8 @@ import fx from "../../fx";
 import PageHomeTech from "./PageHomeTech"
 import PageHome from "./PageHome"
 
-import PageChecklists from "./PageChecklists"
 
-
-class HeroHome extends React.Component
+class HeroPreview extends React.Component
 {
 
 
@@ -19,8 +17,9 @@ class HeroHome extends React.Component
 
     render = () => {
 
-        const currentPageName = this.props.pageClass.Name;
+        const currentPageKey = this.props.pageClass.PageKey;
 
+console.log(currentPageKey, PageHome.PageKey, PageHomeTech.PageKey)
         return(
             <fx.UI.Hero isColor='info' isSize='small'>
                 <fx.UI.HeroHeader >
@@ -37,14 +36,15 @@ class HeroHome extends React.Component
                 </fx.UI.HeroBody>
 
                 <fx.UI.HeroFooter>
-                <fx.UI.Container>
-                    <fx.UI.TabSet isPaged isBoxed isFullWidth currentLocation={currentPageName}>
-                        <fx.UI.TabPageLink tabTitle="home" location="home" />
-                        <fx.UI.TabPageLink tabTitle="Checklists" location={fx.UI.Pages.checklists.pageClass.Location()}/>
-                        <fx.UI.TabPageLink tabTitle="tech" location={PageHomeTech.Location()}/>
-                    </fx.UI.TabSet>
+                    <fx.UI.Container>
+                        <fx.UI.TabSet isPaged isBoxed isFullWidth currentLocation={currentPageKey}>
+                            <fx.UI.TabPageLink tabTitle="Abc" location="home" />
+                            <fx.UI.TabPageLink tabTitle="technology" location="homeTech"/>
+                            <fx.UI.TabPageLink tabTitle="ghi" location="home"/>
+                        </fx.UI.TabSet>
 
-                </fx.UI.Container>
+                            
+                        </fx.UI.Container>
                 </fx.UI.HeroFooter>
             </fx.UI.Hero>
         )
@@ -58,4 +58,4 @@ const mapStateToProps = (state) => (
     } 
   );
   
-export default fx.AppStore.Connect(mapStateToProps)(HeroHome);
+export default fx.AppStore.Connect(mapStateToProps)(HeroPreview);

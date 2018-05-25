@@ -31,20 +31,21 @@ class Page extends React.Component {
 
      return (
 
-        <main className = "page-home-tech">
+        <fx.UI.Container className = "page-home-tech">
 
             <HeroHome pageClass={Page} />
 
-            <a href={fx.HashRouter.BuildHREF("checklists")}>Start Here</a>
+            <fx.UI.Container  isFluid>
+                <a href={fx.HashRouter.BuildHREF("checklists")}>Start Here</a>
 
-            <ul>
-                <li>
-                    Check out FireBase from google
-                </li>
-            </ul>
+                <ul>
+                    <li>
+                        Check out FireBase from google
+                    </li>
+                </ul>
 
-
-        </main>
+            </fx.UI.Container>
+        </fx.UI.Container>
 
     )
 
@@ -54,5 +55,5 @@ class Page extends React.Component {
 
 
 const ConnectedPage = fx.AppStore.Connect()(Page);
-fx.UI.Pages.add(Page, ConnectedPage);
+fx.UI.AddPage(Page, ConnectedPage);
 export default ConnectedPage;

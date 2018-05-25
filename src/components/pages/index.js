@@ -1,9 +1,9 @@
 
+import PageControlPanel from './PageControlPanel';
 import PageHome from "./PageHome";
 import PageUser from "./PageUser"
 import PageChecklist from './PageChecklist';
 import PageChecklists from './PageChecklists';
-import PageControlPanel from './PageControlPanel';
 import PageSignIn from "./PageSignIn";
 import PageSignOut from "./PageSignOut";
 //import PageSignUp from "./PageSignUp";

@@ -35,7 +35,7 @@ export default class HashRouter {
   static Switch = RouterSwitch;
   Switch = RouterSwitch;
 
-  static NavigateTo = (name, options) => {
+  static NavigateTo = (name, options = {}) => {
 
     var currentURI = window.location.hash.substr(1);
     var newURI = Decoder.MakeURI(name, options);

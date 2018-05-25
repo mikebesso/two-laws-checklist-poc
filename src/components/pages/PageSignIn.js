@@ -18,6 +18,7 @@ class Page extends React.Component {
 
     render = () => {
     
+      
         return(
         (!this.props.firebase.authenticated )
         ?
@@ -76,7 +77,7 @@ const mapStateToProps = (state) => (
   
   
   const ConnectedPage = fx.AppStore.Connect(mapStateToProps)(Page);
-  fx.UI.Pages.add(Page, ConnectedPage);
+  fx.UI.AddPage(Page, ConnectedPage);
   export default ConnectedPage;
   
   

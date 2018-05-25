@@ -29,6 +29,9 @@ export default class Firebase {
                 payload: payload
             }
         )
+
+        HashRouter.NavigateTo("home");            
+
     }
 
 
@@ -45,19 +48,26 @@ export default class Firebase {
     }
     
     static SignOut = () => {
-        firebase.auth().signOut().then(
-            () => {
-                AppStore.Dispatch(
-                    {
-                        type: actionTypes.SIGN_OUT,
-                        payload: null
-                    }
-                );
-                HashRouter.NavigateTo("home");
-            },
-            () => console.log("signOut() failed")
         
-        );
+        if (Firebase.CurrentUser){
+
+            firebase.auth().signOut().then(
+                () => {
+                    AppStore.Dispatch(
+                        {
+                            type: actionTypes.SIGN_OUT,
+                            payload: null
+                        }
+                    );
+                    console.log("Signed Out, navigating back to home")
+                    HashRouter.NavigateTo("home");
+                },
+                () => console.log("signOut() failed")
+            );
+
+        } else {
+            HashRouter.NavigateTo("home");
+        };
 
        
                 
@@ -84,12 +94,13 @@ export default class Firebase {
         return firebase.auth().currentUser;
     }
 
-    constructor(firebaseConfig){
-        
+    static get Database(){
+        return firebase.database();
+    }
 
+    constructor(firebaseConfig){
         firebase.initializeApp(firebaseConfig);
         firebase.auth().onAuthStateChanged(Firebase.handleOnAuthStateChanged);
-
     }
 
 

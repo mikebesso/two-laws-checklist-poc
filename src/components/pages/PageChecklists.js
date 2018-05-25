@@ -12,7 +12,7 @@ class Page extends React.Component {
     static Href = (id) => fx.HashRouter.BuildHREF(Page.PageKey, {});
     static Route = `/${Page.PageKey}`;
     static RequiresAuthentication = true;
-
+    static NavigateTo = () => fx.HashRouter.NavigateTo(Page.PageKey, {})
 
     render(){
         return(
@@ -26,5 +26,6 @@ class Page extends React.Component {
 }
 
 const ConnectedPage = fx.AppStore.Connect()(Page);
-fx.UI.Pages.add(Page, ConnectedPage);
+
+fx.UI.AddPage(Page, ConnectedPage);
 export default ConnectedPage;
